@@ -119,7 +119,21 @@ export default async function handler(req, res) {
     if (!r.ok) {
       const detail = await r.text();
       console.error("Resend rejected the message:", r.status, detail);
-      return res.status(502).json({ ok: false, error: "The message could not be sent." });
+      // Surface a short reason. These are configuration faults — an unverified
+      // domain, a sender the account may not use — not anything sensitive, and
+      // without them a failure here is undiagnosable from the outside.
+      let reason = "";
+      try {
+        const parsed = JSON.parse(detail);
+        reason = parsed.message || parsed.name || "";
+      } catch {
+        reason = detail.slice(0, 160);
+      }
+      return res.status(502).json({
+        ok: false,
+        error: "The message could not be sent.",
+        upstream: { status: r.status, reason },
+      });
     }
     return res.status(200).json({ ok: true });
   } catch (err) {
