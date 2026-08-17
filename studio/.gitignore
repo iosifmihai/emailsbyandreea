@@ -1,4 +1,4 @@
 node_modules
 dist
 .env*
-seed/seed.ndjson
+seed/*.ndjson

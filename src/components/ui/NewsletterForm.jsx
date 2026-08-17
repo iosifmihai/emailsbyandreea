@@ -153,9 +153,9 @@ export default function NewsletterForm({ tone = "light", compact = false }) {
         className={`nl__status${state === "error" ? " nl__status--error" : ""}`}
         role="status"
       >
-        {state === "sent" && "You are on the list — thank you."}
+        {state === "sent" && "You are on the list, thank you."}
         {state === "drafted" &&
-          "Your mail app should have opened with the message ready — press send."}
+          "Your mail app should have opened with the message ready, press send."}
         {state === "error" && sendError}
       </p>
 

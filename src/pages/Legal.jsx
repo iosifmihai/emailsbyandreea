@@ -32,7 +32,7 @@ function CookieTable({ group }) {
                 <td>{r.purpose}</td>
                 <td>
                   {r.provider}
-                  {r.service && r.service !== "—" && (
+                  {r.service && (
                     <span className="lgl__svc">{r.service}</span>
                   )}
                 </td>
@@ -68,7 +68,7 @@ export default function Legal({ slug }) {
 
       <article className="section lgl">
         <div className="shell lgl__grid">
-          {/* section index — the policies are long, so they get contents */}
+          {/* section index, the policies are long, so they get contents */}
           <nav className="lgl__toc" aria-label="On this page">
             <p className="label label--tight">Contents</p>
             <ol>

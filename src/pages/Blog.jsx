@@ -23,7 +23,7 @@ export default function Blog() {
     <>
       <Seo
         title="Journal"
-        description="Notes on email and SMS lifecycle marketing for established e-commerce brands — deliverability, retention, automation and the numbers behind them."
+        description="Notes on email and SMS lifecycle marketing for established e-commerce brands, deliverability, retention, automation and the numbers behind them."
         path="/blog"
       />
 
@@ -57,7 +57,7 @@ export default function Blog() {
           )}
 
           {status === "ready" && (!posts || posts.length === 0) && (
-            <p className="blog__state">No articles published yet — the first one is coming.</p>
+            <p className="blog__state">No articles published yet, the first one is coming.</p>
           )}
 
           {status === "ready" && posts?.length > 0 && (

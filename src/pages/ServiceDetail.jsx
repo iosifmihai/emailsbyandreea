@@ -44,7 +44,7 @@ export default function ServiceDetail() {
       />
 
       <div className="svc">
-        {/* Rationale — present on the services that argue a case before
+        {/* Rationale, present on the services that argue a case before
             listing anything (Strategy, Automation). */}
         {service.rationale && (
           <section className="section--tight svc__rationale">
@@ -86,7 +86,7 @@ export default function ServiceDetail() {
           </section>
         )}
 
-        {/* Inclusions — the scope register for services that publish one */}
+        {/* Inclusions, the scope register for services that publish one */}
         {service.highlights?.length > 0 && (
           <section className="section band-paper-deep" aria-labelledby="incl-h">
             <div className="shell">
@@ -117,7 +117,7 @@ export default function ServiceDetail() {
           </section>
         )}
 
-        {/* Deliverables — flat prose statements, so they get a ruled list */}
+        {/* Deliverables, flat prose statements, so they get a ruled list */}
         {service.deliverables?.length > 0 && (
           <section className="section svc__deliv" aria-labelledby="deliv-h">
             <div className="shell sec-head">

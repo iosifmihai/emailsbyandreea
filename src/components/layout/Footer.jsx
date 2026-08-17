@@ -18,7 +18,7 @@ export default function Footer() {
   return (
     <footer className="ftr on-dark">
       <div className="shell">
-        {/* The footer opens with the positioning statement, set large — it
+        {/* The footer opens with the positioning statement, set large, it
             reads as a closing statement rather than a link dump. */}
         <div className="ftr__top">
           <div className="ftr__ident">
@@ -31,7 +31,7 @@ export default function Footer() {
               loading="lazy"
             />
             <p className="ftr__statement">
-              Email and SMS lifecycle systems for established e-commerce brands —
+              Email and SMS lifecycle systems for established e-commerce brands, 
               built so retention becomes the most predictable line in the business.
             </p>
             <a className="ftr__mail" href={`mailto:${site.email}`}>

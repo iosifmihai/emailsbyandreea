@@ -106,7 +106,7 @@ export const legalPages = [
                 purpose:
                   "This cookie is utilized to enable emoji support on pages using WordPress.",
                 provider: "emailsbyandreea.com",
-                service: "—",
+                service: "",
                 type: "html_session_storage",
                 expires: "session",
               },

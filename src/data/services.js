@@ -68,13 +68,13 @@ export const services = [
     deliverablesLabel: "What you receive",
     deliverables: [
       "A detailed account report summarizing current state, risks, opportunities, and baseline KPIs with relevant benchmarks.",
-      "Strategic recommendations for the next 3–6 months — a prioritized roadmap with effort-vs-impact, sequencing, test hypotheses, and clear measurement guardrails.",
+      "Strategic recommendations for the next 3–6 months: a prioritized roadmap with effort-vs-impact, sequencing, test hypotheses, and clear measurement guardrails.",
     ],
     ctaLabel: "Request an Audit",
     faqs: [
       {
         q: "What is the Email Performance Audit?",
-        a: "The Full-Spectrum Audit is a comprehensive, data-driven analysis of your entire email program—including deliverability, automated flows, segmentation, and content strategy. It functions as a precise diagnostic to identify revenue leaks and growth bottlenecks.",
+        a: "The Full-Spectrum Audit is a comprehensive, data-driven analysis of your entire email program, including deliverability, automated flows, segmentation, and content strategy. It functions as a precise diagnostic to identify revenue leaks and growth bottlenecks.",
       },
       {
         q: "Why is the Audit important for established brands?",
@@ -122,7 +122,7 @@ export const services = [
       "An executive-level roadmap that governs your retention ecosystem for the next 6–12 months, tied directly to your business KPIs.",
     metaTitle: "Strategic Email Growth Roadmap",
     metaDescription:
-      "A custom 6–12 month email strategy roadmap for e-commerce brands — segmentation, attribution and automation architecture aligned to your core business KPIs.",
+      "A custom 6–12 month email strategy roadmap for e-commerce brands: segmentation, attribution and automation architecture aligned to your core business KPIs.",
     headline: "Strategic Email Growth Roadmap",
     intro:
       "Email remains the highest-yielding ROI channel in e-commerce, consistently outperforming paid media. By applying a system-first methodology, I transform your subscriber list into a predictable profit center through intelligent segmentation, precise attribution, and automation built to scale.",
@@ -171,7 +171,7 @@ export const services = [
     n: "03",
     pillar: "01",
     summary:
-      "The technical architecture for your ESP — configured for peak deliverability and data fidelity from the first send.",
+      "The technical architecture for your ESP, configured for peak deliverability and data fidelity from the first send.",
     metaTitle: "Professional Email Account Setup",
     metaDescription:
       "Strategic Email Service Provider setup and integration for e-commerce brands. Technical architecture configured for deliverability, data fidelity and revenue automation from day one.",
@@ -226,13 +226,13 @@ export const services = [
     n: "04",
     pillar: "02",
     summary:
-      "System-first flow architecture across the lifecycle — Welcome, Abandoned Cart, Post-Purchase and Winback, engineered to compound retention.",
+      "System-first flow architecture across the lifecycle: Welcome, Abandoned Cart, Post-Purchase and Winback, engineered to compound retention.",
     metaTitle: "Email & SMS Automation Setup",
     metaDescription:
       "High-impact email and SMS automation architecture for e-commerce: Welcome, Abandoned Cart, Browse, Post-Purchase and Winback flows built to compound retention and protect deliverability.",
     headline: "High-Impact Email & SMS Automations",
     intro:
-      "Automations are the backbone of a high-growth e-commerce brand, typically driving 30–60% of total email revenue. I design a system-first architecture that covers the essential lifecycle stages—from Welcome and Abandoned Cart to Post-Purchase and Winback—engineered specifically to compound retention and protect your deliverability.",
+      "Automations are the backbone of a high-growth e-commerce brand, typically driving 30–60% of total email revenue. I design a system-first architecture that covers the essential lifecycle stages, from Welcome and Abandoned Cart to Post-Purchase and Winback, engineered specifically to compound retention and protect your deliverability.",
     rationale: {
       title: "Why this works",
       copy: "Multi-step sequences target high-intent behaviors with surgical precision, operating 24/7 to capture revenue that would otherwise be lost. By architecting these flows to be continuously optimized, I ensure your brand achieves a higher Customer Lifetime Value (CLV) and a faster payback on acquisition costs. The result is a dependable, automated share of revenue that stabilizes your retention channel.",
@@ -241,11 +241,11 @@ export const services = [
     faqs: [
       {
         q: "What is email marketing automation?",
-        a: "Email marketing automation is the strategic implementation of behavior-triggered logic that sends personalized messages based on specific customer actions—such as browsing a product, abandoning a cart, or completing a purchase. It establishes a 24/7 revenue engine that operates autonomously, ensuring your brand delivers the right message at the perfect moment without manual intervention.",
+        a: "Email marketing automation is the strategic implementation of behavior-triggered logic that sends personalized messages based on specific customer actions, such as browsing a product, abandoning a cart, or completing a purchase. It establishes a 24/7 revenue engine that operates autonomously, ensuring your brand delivers the right message at the perfect moment without manual intervention.",
       },
       {
         q: "What does the Email Automation service include?",
-        a: "This service covers the end-to-end strategic architecture, technical build, and logic integration for your essential email and SMS flows. I oversee the entire deployment process—from mapping customer journeys to rigorous quality assurance (QA)—ensuring your automated ecosystem is engineered to maximize conversion rates and customer lifetime value.",
+        a: "This service covers the end-to-end strategic architecture, technical build, and logic integration for your essential email and SMS flows. I oversee the entire deployment process, from mapping customer journeys to rigorous quality assurance (QA), ensuring your automated ecosystem is engineered to maximize conversion rates and customer lifetime value.",
       },
       {
         q: "Which automated flows are considered “high-yield” for e-commerce?",
@@ -286,7 +286,7 @@ export const services = [
     n: "05",
     pillar: "02",
     summary:
-      "Re-engineering live sequences — timing, logic filters and high-intent copy — to lift Revenue Per Recipient and conversion rate.",
+      "Re-engineering live sequences, timing, logic filters and high-intent copy, to lift Revenue Per Recipient and conversion rate.",
     metaTitle: "Advanced Email Flow Optimization",
     metaDescription:
       "Data-driven optimization of existing email flows: behavioural analysis, filter logic, timing and copy testing to increase Revenue Per Recipient and accelerate Customer Lifetime Value.",
@@ -301,15 +301,15 @@ export const services = [
     faqs: [
       {
         q: "What is Email Flow Optimization?",
-        a: "Email Flow Optimization is the rigorous process of re-engineering your existing automated sequences to extract maximum performance. It involves deep behavioral analysis and the testing of strategic hypotheses—adjusting timing, logic filters, and high-intent copy—to systematically increase your Revenue Per Recipient (RPR) and overall retention efficiency.",
+        a: "Email Flow Optimization is the rigorous process of re-engineering your existing automated sequences to extract maximum performance. It involves deep behavioral analysis and the testing of strategic hypotheses, adjusting timing, logic filters, and high-intent copy, to systematically increase your Revenue Per Recipient (RPR) and overall retention efficiency.",
       },
       {
         q: "Who needs the Email Flow Optimization service?",
-        a: "This service is engineered for established e-commerce brands that have outgrown their initial “set-and-forget” sequences. If you have core automations running—like Welcome and Abandoned Cart—but recognize that your conversion rates and Revenue Per Recipient have plateaued, optimization is the key to unlocking your next level of profitability and scaling your Customer Lifetime Value.",
+        a: "This service is engineered for established e-commerce brands that have outgrown their initial “set-and-forget” sequences. If you have core automations running, like Welcome and Abandoned Cart, but recognize that your conversion rates and Revenue Per Recipient have plateaued, optimization is the key to unlocking your next level of profitability and scaling your Customer Lifetime Value.",
       },
       {
         q: "How does this differ from the Automation Setup service?",
-        a: "Automation Setup is about engineering the infrastructure—building the core logic and technical foundation from the ground up. Optimization assumes the flows are active and focuses on performance tuning. It's the shift from construction to high-performance management, where I use live data to refine triggers and content, ensuring your existing sequences consistently scale their revenue contribution.",
+        a: "Automation Setup is about engineering the infrastructure, building the core logic and technical foundation from the ground up. Optimization assumes the flows are active and focuses on performance tuning. It's the shift from construction to high-performance management, where I use live data to refine triggers and content, ensuring your existing sequences consistently scale their revenue contribution.",
       },
       {
         q: "Can you optimize flows built on any of the platforms I use?",
@@ -334,13 +334,13 @@ export const services = [
     n: "06",
     pillar: "03",
     summary:
-      "The editorial engine — calendar, segmentation, copy, testing and QA for 4–8 high-impact sends a month.",
+      "The editorial engine, calendar, segmentation, copy, testing and QA for 4–8 high-impact sends a month.",
     metaTitle: "Strategic Newsletter Management",
     metaDescription:
       "End-to-end newsletter and campaign management for e-commerce brands: editorial calendar, segmentation, copywriting, A/B testing and deployment QA that build authority without list fatigue.",
     headline: "Strategic Newsletter & Campaign Management",
     intro:
-      "While automations run 24/7, high-impact campaigns are the pulse of your brand's revenue, typically driving 40–70% of total email income. I manage your entire editorial ecosystem—from segmentation and disciplined testing to full calendar execution—ensuring every send is a strategic touchpoint that builds long-term authority and delivers consistent, measurable growth without list fatigue.",
+      "While automations run 24/7, high-impact campaigns are the pulse of your brand's revenue, typically driving 40–70% of total email income. I manage your entire editorial ecosystem, from segmentation and disciplined testing to full calendar execution, ensuring every send is a strategic touchpoint that builds long-term authority and delivers consistent, measurable growth without list fatigue.",
     highlightsLabel: "What's included",
     highlights: [
       {
@@ -444,13 +444,13 @@ export const services = [
       },
     ],
     body: [
-      "Pop-up infrastructure is engineered for seamless integration with the email marketing platform through clean data mapping. This ensures subscribers flow instantly into the correct lists and high-intent segments. Consent is recorded with technical accuracy—including optional double opt-in protocols—while tracking is standardized to provide reliable, data-driven reporting.",
+      "Pop-up infrastructure is engineered for seamless integration with the email marketing platform through clean data mapping. This ensures subscribers flow instantly into the correct lists and high-intent segments. Consent is recorded with technical accuracy, including optional double opt-in protocols, while tracking is standardized to provide reliable, data-driven reporting.",
     ],
     ctaLabel: "Engineer the capture strategy",
     faqs: [
       {
         q: "Where is the pop-up hosted and managed?",
-        a: "The lead capture system is engineered directly within the email marketing platform or through specialized external applications, depending on the required complexity. The entire technical configuration—from design and behavioral triggers to data mapping and integration—is handled as part of the implementation service to ensure a turnkey solution.",
+        a: "The lead capture system is engineered directly within the email marketing platform or through specialized external applications, depending on the required complexity. The entire technical configuration, from design and behavioral triggers to data mapping and integration, is handled as part of the implementation service to ensure a turnkey solution.",
       },
       {
         q: "Which is recommended: Single Opt-In or Double Opt-In?",
@@ -462,7 +462,7 @@ export const services = [
       },
       {
         q: "What types of pop-ups can be implemented?",
-        a: "Technically, any format can be deployed depending on the specific offer and brand objective. This ranges from standard subscription forms to interactive elements like “spin-to-win” games or multi-step quizzes. The entire setup—from selecting the most effective format to its full technical configuration—is managed to ensure it aligns with the overall strategy.",
+        a: "Technically, any format can be deployed depending on the specific offer and brand objective. This ranges from standard subscription forms to interactive elements like “spin-to-win” games or multi-step quizzes. The entire setup, from selecting the most effective format to its full technical configuration, is managed to ensure it aligns with the overall strategy.",
       },
       {
         q: "Won't pop-ups annoy my customers and hurt the user experience?",
@@ -487,13 +487,13 @@ export const services = [
     n: "08",
     pillar: "03",
     summary:
-      "A compliant, revenue-positive SMS layer orchestrated with email — often ~10–20% of total lifecycle revenue.",
+      "A compliant, revenue-positive SMS layer orchestrated with email, often ~10–20% of total lifecycle revenue.",
     metaTitle: "Revenue-Positive SMS Marketing",
     metaDescription:
       "Compliant SMS lifecycle marketing for e-commerce: consent and keyword flows, automations, campaigns, deliverability safeguards and cross-channel attribution alongside email.",
     headline: "Revenue-Positive SMS Marketing",
     intro:
-      "SMS reaches customers with unmatched speed—messages are typically viewed within minutes, maintaining read rates far above email. In mature ecosystems, SMS often contributes ~10–20% of total lifecycle revenue. This infrastructure is essential for securing immediate revenue and compounding the results of retention campaigns.",
+      "SMS reaches customers with unmatched speed, messages are typically viewed within minutes, maintaining read rates far above email. In mature ecosystems, SMS often contributes ~10–20% of total lifecycle revenue. This infrastructure is essential for securing immediate revenue and compounding the results of retention campaigns.",
     highlightsLabel: "What I offer",
     highlights: [
       {
@@ -514,7 +514,7 @@ export const services = [
       },
       {
         title: "Automations",
-        copy: "Welcome, Abandoned Cart, Browse, Shipping/Delivery, Back-in-Stock, Post-Purchase, Winback—trigger logic and guardrails included.",
+        copy: "Welcome, Abandoned Cart, Browse, Shipping/Delivery, Back-in-Stock, Post-Purchase, Winback, trigger logic and guardrails included.",
       },
       {
         title: "Campaigns",
@@ -560,7 +560,7 @@ export const services = [
       },
       {
         q: "Can I track exactly how much revenue an SMS campaign generates?",
-        a: "Yes. Through standardized UTM tracking and dedicated discount codes, every click and purchase is attributed to the specific SMS that triggered it. This allows for clear reporting on incremental lift—showing exactly how much revenue was generated by the SMS channel that wouldn't have been captured by email alone.",
+        a: "Yes. Through standardized UTM tracking and dedicated discount codes, every click and purchase is attributed to the specific SMS that triggered it. This allows for clear reporting on incremental lift, showing exactly how much revenue was generated by the SMS channel that wouldn't have been captured by email alone.",
       },
     ],
     closing: {
@@ -577,7 +577,7 @@ export const services = [
     n: "09",
     pillar: "04",
     summary:
-      "Decision-grade readouts on revenue, growth and account health — each cycle closing with a focused 90-day plan.",
+      "Decision-grade readouts on revenue, growth and account health, each cycle closing with a focused 90-day plan.",
     metaTitle: "Decision-Grade Email Reporting",
     metaDescription:
       "Decision-grade email and SMS reporting: flow and campaign revenue attribution, database growth, deliverability health and a focused 90-day plan every cycle.",

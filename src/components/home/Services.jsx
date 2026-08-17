@@ -29,7 +29,7 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Nine rows, numbered because the list is an ordered programme —
+        {/* Nine rows, numbered because the list is an ordered programme, 
             foundation first, reporting last. Each row expands on hover or
             keyboard focus; below 900px the summary is simply always shown. */}
         <ol className="svcs__list">

@@ -65,7 +65,7 @@ export const strategic = {
   label: "The long view",
   heading: "The Strategic Importance of Email Marketing",
   intro:
-    "In the crowded DTC landscape, high-performance email marketing is not a secondary channel—it is a primary, owned profit driver that dictates brand resilience and scaling potential. I ensure this channel operates at peak efficiency, delivering maximum return without relying on volatile ad platforms.",
+    "In the crowded DTC landscape, high-performance email marketing is not a secondary channel; it is a primary, owned profit driver that dictates brand resilience and scaling potential. I ensure this channel operates at peak efficiency, delivering maximum return without relying on volatile ad platforms.",
   chapters: [
     {
       id: "predictability",
@@ -132,7 +132,7 @@ export const servicesPage = {
     "System-first email and SMS lifecycle services for established e-commerce brands: audit, strategy, account setup, automation, flow optimization, newsletters, pop-ups, SMS and reporting.",
   heading: "Email Marketing Services",
   intro:
-    "Industry benchmarks consistently show that email marketing delivers an average $42 ROI for every $1 invested. By architecting a system-first lifecycle program, I transform email and SMS into high-leverage growth engines through intelligent audience segmentation, precise attribution, and compounding automation—all designed to systematically elevate Customer Lifetime Value.",
+    "Industry benchmarks consistently show that email marketing delivers an average $42 ROI for every $1 invested. By architecting a system-first lifecycle program, I transform email and SMS into high-leverage growth engines through intelligent audience segmentation, precise attribution, and compounding automation, all designed to systematically elevate Customer Lifetime Value.",
   stats: [
     { figure: "$42", label: "Average return for every single dollar invested in email marketing." },
     { figure: "40×", label: "More effective at acquiring new customers than social media." },
@@ -144,7 +144,7 @@ export const servicesPage = {
     points: [
       {
         title: "Full-Spectrum Channel Management",
-        copy: "I provide end-to-end oversight of your email ecosystem—from initial account takeover and database hygiene to advanced segmentation and automation optimization. Every element, including newsletter strategy, pop-up conversion design, and rigorous testing cadences, is engineered to drive performance.",
+        copy: "I provide end-to-end oversight of your email ecosystem, from initial account takeover and database hygiene to advanced segmentation and automation optimization. Every element, including newsletter strategy, pop-up conversion design, and rigorous testing cadences, is engineered to drive performance.",
       },
       {
         title: "Integrated SMS Strategy",
@@ -212,13 +212,13 @@ export const aboutPage = {
   philosophy: {
     label: "My philosophy",
     title: "Listener Before Marketer",
-    copy: "My philosophy is simple: Listener before Marketer. Long-term success is built on clear strategy, clean data, and dependability—not on temporary hype. I look at your unique margin constraints, your ideal customer, and your business goals first, then I design a system that scales.",
+    copy: "My philosophy is simple: Listener before Marketer. Long-term success is built on clear strategy, clean data, and dependability, not on temporary hype. I look at your unique margin constraints, your ideal customer, and your business goals first, then I design a system that scales.",
   },
   story: {
     label: "My story",
     title: "From Junior to Expert",
     paragraphs: [
-      "My journey into digital marketing began during high school, where I ran my own small business creating and selling personalized gift boxes. It was there I realized that connecting with customers and meeting their needs was the most thrilling part of running a business. This passion for genuine connection—a “human-first” approach—is what drove me to become an E-mail Marketing Strategist.",
+      "My journey into digital marketing began during high school, where I ran my own small business creating and selling personalized gift boxes. It was there I realized that connecting with customers and meeting their needs was the most thrilling part of running a business. This passion for genuine connection, a “human-first” approach, is what drove me to become an E-mail Marketing Strategist.",
       "I believe the email channel needs to be a source of confidence, not stress. That is why I founded “Emails by Andreea”: to build high-performance, predictable email systems for ambitious brands, ensuring stability and measurable growth.",
     ],
   },
@@ -282,7 +282,7 @@ export const aboutPage = {
 export const reviewsPage = {
   metaTitle: "My Reviews",
   metaDescription:
-    "Verified client reviews for Emails by Andreea — e-commerce brands across the US, UK and EU on flow optimization, retention strategy and Customer Lifetime Value.",
+    "Verified client reviews for Emails by Andreea from e-commerce brands across the US, UK and EU on flow optimization, retention strategy and Customer Lifetime Value.",
   eyebrow: "Reviews",
   heading: "Trusted by ambitious e-commerce brands.",
   intro:

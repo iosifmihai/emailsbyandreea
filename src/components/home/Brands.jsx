@@ -16,7 +16,7 @@ export default function Brands() {
           </h2>
         </Reveal>
 
-        {/* An ruled grid rather than a second marquee — the platforms rail
+        {/* An ruled grid rather than a second marquee, the platforms rail
             already moves, and two moving rows on one page reads as noise. */}
         <Reveal className="brands__grid" delay={80}>
           {brands.map((b) => (

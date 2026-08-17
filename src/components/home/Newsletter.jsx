@@ -7,7 +7,7 @@ export default function Newsletter() {
   return (
     <section className="nlsec section band-sand" aria-labelledby="nl-h">
       <div className="shell nlsec__inner">
-        {/* inside the head, not a direct child of the grid — as a grid item it
+        {/* inside the head, not a direct child of the grid, as a grid item it
             would take a cell of its own and shunt the columns along */}
         <div className="nlsec__head">
           <span id="plane-newsletter" className="plane-stop plane-stop--l" aria-hidden="true" />

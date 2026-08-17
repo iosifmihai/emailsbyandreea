@@ -43,7 +43,7 @@ export function Seo({
   jsonLd,
   noindex = false,
 }) {
-  const fullTitle = title ? `${title} — ${SUFFIX}` : SUFFIX;
+  const fullTitle = title ? `${title} | ${SUFFIX}` : SUFFIX;
   const url = `${site.origin}${path === "/" ? "/" : path}`;
   const imageUrl = image.startsWith("http") ? image : `${site.origin}${image}`;
   const ld = jsonLd ? JSON.stringify(jsonLd) : null;

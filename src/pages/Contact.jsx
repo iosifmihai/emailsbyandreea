@@ -78,7 +78,7 @@ export default function Contact() {
 
     const draft = mailto({
       subject: `Enquiry from ${values.name.trim()}${
-        values.company.trim() ? ` — ${values.company.trim()}` : ""
+        values.company.trim() ? `, ${values.company.trim()}` : ""
       }`,
       body: lines.join("\n"),
     });
@@ -182,7 +182,7 @@ export default function Contact() {
               <p className="label">How this works</p>
               <p>
                 Your message goes straight to {site.email}. Andreea replies to the
-                address you give — usually with a question or two about where your
+                address you give, usually with a question or two about where your
                 email channel is now.
               </p>
             </Reveal>
@@ -327,9 +327,9 @@ export default function Contact() {
                   role="status"
                 >
                   {state === "sent" &&
-                    "Sent — thank you. Your enquiry is in Andreea's inbox and she'll reply to the address you gave."}
+                    "Sent, thank you. Your enquiry is in Andreea's inbox and she'll reply to the address you gave."}
                   {state === "drafted" &&
-                    "Your mail app should have opened with everything filled in — press send and it's on its way."}
+                    "Your mail app should have opened with everything filled in, press send and it's on its way."}
                   {state === "error" && sendError}
                 </p>
               </div>

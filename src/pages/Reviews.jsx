@@ -94,7 +94,7 @@ export default function Reviews() {
           <Reveal className="rvw__note">
             <p>
               {entries.length} published reviews from brands across the US, UK and EU. Nothing on
-              this page is composed or incentivised — each one was given by a client
+              this page is composed or incentivised, each one was given by a client
               Andreea worked with directly.
             </p>
           </Reveal>

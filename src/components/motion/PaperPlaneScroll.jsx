@@ -502,7 +502,7 @@ export default function PaperPlaneScroll({
         />
       </svg>
 
-      {/* email card — a plain composer, squared off, hairline border */}
+      {/* email card, a plain composer, squared off, hairline border */}
       <div
         ref={cardRef}
         style={{
@@ -621,7 +621,7 @@ export default function PaperPlaneScroll({
         </div>
       </div>
 
-      {/* Sealed envelope — where the journey lands. Deliberately not the
+      {/* Sealed envelope, where the journey lands. Deliberately not the
           composer from the hero: the story is compose → fly → delivered, and
           re-showing the opening card at the end just read as a repeat. */}
       <div

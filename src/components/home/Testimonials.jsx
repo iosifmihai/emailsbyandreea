@@ -68,7 +68,7 @@ export default function Testimonials() {
         </div>
 
         <div className="tst__body">
-          {/* index rail — also the control surface */}
+          {/* index rail, also the control surface */}
           <div className="tst__index" role="group" aria-label="Choose a testimonial">
             {homeTestimonials.map((t, i) => (
               <button

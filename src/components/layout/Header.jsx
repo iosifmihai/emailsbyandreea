@@ -69,7 +69,7 @@ export default function Header() {
   return (
     <header className={`hdr${scrolled ? " is-scrolled" : ""}${menuOpen ? " is-open" : ""}`}>
       <div className="hdr__inner">
-        <Link to="/" className="hdr__brand" aria-label={`Emails by Andreea — home`}>
+        <Link to="/" className="hdr__brand" aria-label={`Emails by Andreea, home`}>
           <img
             src="/assets/brand/logo-dark.png"
             alt="Emails by Andreea"
