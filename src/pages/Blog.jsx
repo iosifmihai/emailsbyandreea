@@ -63,7 +63,8 @@ export default function Blog() {
           {status === "ready" && posts?.length > 0 && (
             <ol className="blog__list">
               {posts.map((post, i) => {
-                const src = imageUrl(post.thumbnail, { width: 900, height: 620 });
+                // width only: adding a height would make the CDN crop the artwork
+                const src = imageUrl(post.thumbnail, { width: 800 });
                 return (
                   <Reveal as="li" key={post._id} className="blog__item" delay={(i % 3) * 70}>
                     <Link to={`/blog/${post.slug}`} className="blog__card">
@@ -72,8 +73,6 @@ export default function Blog() {
                           <img
                             src={src}
                             alt={imageAlt(post.thumbnail, post.title)}
-                            width="900"
-                            height="620"
                             loading={i < 3 ? "eager" : "lazy"}
                           />
                         </div>

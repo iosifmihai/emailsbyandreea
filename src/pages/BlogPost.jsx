@@ -59,7 +59,9 @@ export default function BlogPost() {
     );
   }
 
-  const hero = imageUrl(post.thumbnail, { width: 1600, height: 900 });
+  // width only, so the banner is never cropped; the share image keeps its
+  // 1200x630 crop because social platforms expect that ratio
+  const hero = imageUrl(post.thumbnail, { width: 1600 });
   const share = imageUrl(post.ogImage || post.thumbnail, { width: 1200, height: 630 });
 
   const articleSchema = {
@@ -113,8 +115,6 @@ export default function BlogPost() {
               <img
                 src={hero}
                 alt={imageAlt(post.thumbnail, post.title)}
-                width="1600"
-                height="900"
                 fetchPriority="high"
               />
             </div>
