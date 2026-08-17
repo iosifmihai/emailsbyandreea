@@ -44,7 +44,7 @@ const docs = [];
 /* ---- reviews: the dated archive first, then the homepage three ---- */
 reviewArchive.forEach((r, i) => {
   docs.push({
-    _id: `review.${r.id}`,
+    _id: `review-${r.id}`,
     _type: "review",
     quote: r.quote,
     name: r.name,
@@ -57,7 +57,7 @@ reviewArchive.forEach((r, i) => {
 });
 homeTestimonials.forEach((t, i) => {
   docs.push({
-    _id: `review.${t.id}`,
+    _id: `review-${t.id}`,
     _type: "review",
     quote: t.quote,
     name: t.name,
@@ -71,7 +71,7 @@ homeTestimonials.forEach((t, i) => {
 /* ---- brands + platforms, with their logos ---- */
 brands.forEach((b, i) => {
   docs.push({
-    _id: `brand.${slug(b.name)}`,
+    _id: `brand-${slug(b.name)}`,
     _type: "brand",
     name: b.name,
     order: i + 1,
@@ -80,7 +80,7 @@ brands.forEach((b, i) => {
 });
 platforms.forEach((p, i) => {
   docs.push({
-    _id: `platform.${slug(p.name)}`,
+    _id: `platform-${slug(p.name)}`,
     _type: "platform",
     name: p.name,
     order: i + 1,
