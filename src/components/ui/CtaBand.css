@@ -1,0 +1,58 @@
+.ctab {
+  padding-block: clamp(64px, 9vw, 132px);
+}
+.ctab--navy {
+  background: var(--navy);
+  color: var(--on-dark);
+}
+.ctab--deep {
+  background: var(--navy-deep);
+  color: var(--on-dark);
+}
+.ctab--sand {
+  background: var(--sand);
+}
+.ctab--paper {
+  background: var(--paper-deep);
+}
+
+.ctab__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(28px, 4vw, 72px);
+  align-items: end;
+}
+.ctab__h {
+  font-size: clamp(1.9rem, 4.2vw, 3.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  max-width: 18ch;
+}
+.ctab__copy {
+  margin-top: clamp(16px, 2vw, 24px);
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 54ch;
+}
+.on-dark .ctab__copy {
+  color: var(--on-dark-muted);
+}
+
+.ctab__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding-bottom: 0.4em;
+}
+
+@media (max-width: 900px) {
+  .ctab__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .ctab__h {
+    max-width: none;
+  }
+}

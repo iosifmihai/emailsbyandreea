@@ -1,0 +1,88 @@
+/**
+ * Design tokens — Emails by Andreea.
+ *
+ * Palette sampled from the live brand (emailsbyandreea.com): warm off-white
+ * ground, cool near-black ink, deep navy as the primary. Navy carries the
+ * authority of a financial/institutional palette, which is the right register
+ * for a channel sold on predictable revenue — and it keeps the site clear of
+ * the generic purple-SaaS treatment.
+ */
+:root {
+  /* ---- ground ---- */
+  --paper: #f5f5f0; /* warm off-white, the default ground */
+  --paper-deep: #efeee7; /* half-step down, for alternating bands */
+  --sand: #e3dcd4; /* warm neutral surface */
+  --sand-deep: #d6cec3;
+
+  /* ---- ink ---- */
+  --ink: #091019; /* near-black, body + headings */
+  --ink-warm: #171512; /* warm near-black, used for full-bleed dark bands */
+  --muted: #5a6472; /* secondary text on paper */
+  --muted-soft: #7c8593;
+
+  /* ---- primary ---- */
+  --navy: #0a2447; /* the brand primary */
+  --navy-mid: #1e4b7e; /* interactive / hover */
+  --navy-deep: #061729;
+  --sky: #7494b8; /* restrained accent for data + labels */
+
+  /* ---- lines ---- */
+  --rule: rgba(9, 16, 25, 0.13);
+  --rule-mid: rgba(9, 16, 25, 0.22);
+  --rule-strong: rgba(9, 16, 25, 0.42);
+
+  /* ---- on dark ---- */
+  --on-dark: #f5f5f0;
+  --on-dark-muted: rgba(245, 245, 240, 0.62);
+  --on-dark-faint: rgba(245, 245, 240, 0.34);
+  --rule-invert: rgba(245, 245, 240, 0.18);
+  --rule-invert-mid: rgba(245, 245, 240, 0.3);
+
+  /* ---- state ---- */
+  --focus: #1e4b7e;
+  --error: #9a2f2f;
+  --success: #2f6b46;
+
+  /* ---- type ---- */
+  --font-display: "Bricolage Grotesque", "Montserrat", system-ui, sans-serif;
+  --font-body: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* fluid scale — every step is clamped so nothing needs a breakpoint override */
+  --fs-display: clamp(3rem, 7.6vw, 7.6rem);
+  --fs-h1: clamp(2.35rem, 5.4vw, 5rem);
+  --fs-h2: clamp(1.95rem, 3.9vw, 3.35rem);
+  --fs-h3: clamp(1.3rem, 1.9vw, 1.8rem);
+  --fs-h4: clamp(1.08rem, 1.3vw, 1.24rem);
+  --fs-lead: clamp(1.06rem, 1.45vw, 1.3rem);
+  --fs-body: clamp(0.97rem, 1.02vw, 1.05rem);
+  --fs-small: clamp(0.85rem, 0.9vw, 0.92rem);
+  --fs-label: 0.7rem;
+  --fs-numeral: clamp(3.2rem, 8.2vw, 8rem);
+
+  /* ---- rhythm ---- */
+  --container: 1360px;
+  --measure: 62ch;
+  --edge: clamp(20px, 4.6vw, 72px);
+  --section: clamp(84px, 11vw, 176px);
+  --section-tight: clamp(56px, 7vw, 104px);
+  --gutter: clamp(20px, 2.4vw, 40px);
+
+  /* ---- geometry ---- */
+  /* Deliberately near-square: the structure is carried by hairline rules,
+     not by rounded containers. */
+  --r: 2px;
+  --r-img: 3px;
+
+  /* ---- motion ---- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 200ms;
+  --dur-med: 460ms;
+  --dur-slow: 880ms;
+
+  /* ---- layering ---- */
+  --z-plane: 40;
+  --z-header: 60;
+  --z-menu: 80;
+}

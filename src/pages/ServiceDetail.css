@@ -1,0 +1,163 @@
+.svc__pillar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 16px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.svc__pillar-k {
+  color: var(--sky);
+}
+.svc__pillar-v {
+  color: var(--muted);
+}
+
+.svc__h2 {
+  font-size: clamp(1.7rem, 3.2vw, 2.7rem);
+  max-width: 22ch;
+  margin-bottom: 20px;
+}
+
+.svc__ratcopy,
+.svc__para {
+  font-size: var(--fs-lead);
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 64ch;
+}
+.svc__para + .svc__para,
+.reveal + .reveal .svc__para {
+  margin-top: 1em;
+}
+.svc__ratcopy {
+  border-left: 1px solid var(--navy);
+  padding-left: clamp(16px, 2vw, 24px);
+  color: var(--ink);
+  opacity: 0.82;
+}
+
+/* ---- inclusions ---- */
+.svc__inclhead {
+  margin-bottom: clamp(36px, 5vw, 60px);
+}
+.svc__incl {
+  display: grid;
+  /* auto-fit, so a service with two inclusions gets two full-width columns
+     instead of three with a dead cell on the end */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border-block: 1px solid var(--rule);
+}
+.svc__inclitem {
+  background: var(--paper-deep);
+  padding: clamp(22px, 2.6vw, 34px);
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.svc__incln {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  color: var(--sky);
+}
+.svc__incltitle {
+  font-size: clamp(1.05rem, 1.6vw, 1.28rem);
+  line-height: 1.2;
+}
+.svc__inclcopy {
+  font-size: var(--fs-small);
+  line-height: 1.62;
+  color: var(--muted);
+}
+
+/* ---- deliverables ---- */
+.svc__delivlist {
+  margin-top: clamp(24px, 3vw, 36px);
+  border-top: 1px solid var(--rule-mid);
+}
+.svc__delivlist li {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(14px, 2.4vw, 28px);
+  padding-block: clamp(18px, 2.2vw, 26px);
+  border-bottom: 1px solid var(--rule);
+  font-size: var(--fs-small);
+  line-height: 1.66;
+  color: var(--muted);
+}
+.svc__delivn {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  color: var(--sky);
+  padding-top: 0.35em;
+}
+
+/* ---- related ---- */
+.svc__relh {
+  margin-bottom: clamp(24px, 3vw, 38px);
+}
+.svc__relgrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 28px);
+}
+.svc__relcard {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  height: 100%;
+  padding: clamp(20px, 2.4vw, 30px);
+  border: 1px solid var(--rule-mid);
+  border-radius: var(--r);
+  background: transparent;
+  transition:
+    background var(--dur-med) var(--ease),
+    border-color var(--dur-med) var(--ease),
+    color var(--dur-med) var(--ease);
+}
+.svc__relcard:hover,
+.svc__relcard:focus-visible {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--on-dark);
+}
+.svc__reln {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  color: var(--sky);
+}
+.svc__relcard h3 {
+  font-size: 1.2rem;
+}
+.svc__relcard p {
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--muted);
+  transition: color var(--dur-med) var(--ease);
+}
+.svc__relcard:hover p,
+.svc__relcard:focus-visible p {
+  color: var(--on-dark-muted);
+}
+.svc__relgo {
+  margin-top: auto;
+  padding-top: 12px;
+  transition: transform var(--dur-med) var(--ease);
+}
+.svc__relcard:hover .svc__relgo {
+  transform: translateX(5px);
+}
+
+@media (max-width: 980px) {
+  .svc__relgrid {
+    grid-template-columns: 1fr;
+  }
+}
+

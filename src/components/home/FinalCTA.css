@@ -1,0 +1,50 @@
+.fcta {
+  background: var(--navy);
+  padding-block: clamp(88px, 12vw, 172px);
+  position: relative;
+  overflow: hidden;
+}
+.fcta__inner {
+  position: relative;
+}
+
+.fcta__label {
+  margin-bottom: clamp(26px, 3.4vw, 40px);
+}
+
+.fcta__h {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 9rem);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+  margin-bottom: clamp(30px, 4vw, 48px);
+}
+.fcta__word {
+  display: block;
+  overflow: hidden;
+}
+.fcta__word > span {
+  display: block;
+  animation: fctaWord 900ms var(--ease) backwards;
+  animation-delay: calc(var(--i) * 90ms);
+}
+@keyframes fctaWord {
+  from {
+    transform: translateY(102%);
+  }
+}
+
+.fcta__body {
+  max-width: 54ch;
+  position: relative;
+}
+.fcta__copy {
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+  color: var(--on-dark-muted);
+}
+.fcta__actions {
+  margin-top: clamp(30px, 4vw, 44px);
+}
+

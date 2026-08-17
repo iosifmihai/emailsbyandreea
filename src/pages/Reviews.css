@@ -1,0 +1,148 @@
+/* ---- rating summary in the hero ---- */
+.rvw__summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(18px, 3vw, 40px);
+}
+.rvw__score {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-family: var(--font-display);
+  line-height: 1;
+}
+.rvw__scoreval {
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  color: var(--navy);
+}
+.rvw__scoreof {
+  font-size: 1.1rem;
+  color: var(--muted-soft);
+}
+.rvw__summeta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.rvw__summeta p {
+  font-size: var(--fs-small);
+  color: var(--muted);
+  max-width: 34ch;
+}
+.rvw__stars {
+  display: inline-flex;
+  gap: 3px;
+  color: var(--navy);
+}
+
+/* ---- the archive ---- */
+.rvw__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.rvw__item {
+  background: var(--paper);
+  padding: clamp(26px, 3.4vw, 48px);
+  display: flex;
+  transition: background var(--dur-med) var(--ease);
+}
+.rvw__item:hover {
+  background: var(--paper-deep);
+}
+.rvw__item figure {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+/* The first entry gets the full width and a larger quote — the archive has a
+   front page rather than being a flat wall of equal cards. */
+.rvw__item:first-child {
+  grid-column: 1 / -1;
+}
+/* an odd tail would otherwise sit alone beside an empty half-row */
+.rvw__item:last-child:nth-child(even) {
+  grid-column: 1 / -1;
+}
+.rvw__item:first-child .rvw__quote p {
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  max-width: 24ch;
+}
+
+.rvw__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: clamp(18px, 2.4vw, 26px);
+  margin-bottom: clamp(18px, 2.4vw, 26px);
+  border-bottom: 1px solid var(--rule);
+}
+.rvw__n {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.18em;
+  color: var(--sky);
+}
+
+.rvw__quote p {
+  font-family: var(--font-display);
+  font-size: clamp(1.12rem, 1.9vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.24;
+  letter-spacing: -0.024em;
+  text-wrap: pretty;
+}
+
+.rvw__cite {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 16px;
+  margin-top: auto;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.rvw__name {
+  color: var(--ink);
+}
+.rvw__meta {
+  color: var(--navy);
+}
+.rvw__date {
+  color: var(--muted-soft);
+  margin-left: auto;
+}
+
+.rvw__note {
+  margin-top: clamp(28px, 3.4vw, 40px);
+}
+.rvw__note p {
+  font-size: var(--fs-small);
+  color: var(--muted);
+  max-width: 62ch;
+  border-left: 1px solid var(--rule-mid);
+  padding-left: 16px;
+}
+
+@media (max-width: 760px) {
+  .rvw__list {
+    grid-template-columns: 1fr;
+  }
+  .rvw__item:first-child .rvw__quote p {
+    max-width: none;
+  }
+  .rvw__date {
+    margin-left: 0;
+  }
+}

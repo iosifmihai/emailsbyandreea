@@ -1,0 +1,72 @@
+.phero {
+  padding-top: clamp(128px, 16vh, 190px);
+  padding-bottom: clamp(40px, 6vw, 76px);
+  border-bottom: 1px solid var(--rule);
+  animation: pheroIn 700ms var(--ease);
+}
+@keyframes pheroIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.phero__crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-soft);
+  margin-bottom: clamp(22px, 3vw, 34px);
+}
+.phero__crumbs li + li::before {
+  content: "/";
+  margin-right: 8px;
+  color: var(--rule-strong);
+}
+.phero__crumbs a:hover {
+  color: var(--navy);
+}
+.phero__crumbs [aria-current] {
+  color: var(--ink);
+}
+
+.phero__eyebrow {
+  margin-bottom: clamp(20px, 3vw, 30px);
+}
+
+.phero__body {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: end;
+}
+.phero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 5.4vw, 4.8rem);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.042em;
+  text-wrap: balance;
+}
+.phero__lead {
+  max-width: 48ch;
+  padding-bottom: 0.4em;
+}
+
+.phero__meta {
+  margin-top: clamp(32px, 4vw, 52px);
+  padding-top: clamp(20px, 2.6vw, 28px);
+  border-top: 1px solid var(--rule);
+}
+
+@media (max-width: 900px) {
+  .phero__body {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}

@@ -1,0 +1,80 @@
+.metrics {
+  padding-block: clamp(52px, 7vw, 104px);
+  border-top: 1px solid var(--rule);
+}
+
+.metrics__label {
+  margin-bottom: clamp(30px, 4.5vw, 58px);
+}
+
+.metrics__row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--rule-mid);
+}
+
+.metric {
+  padding: clamp(22px, 3vw, 38px) clamp(16px, 2.4vw, 36px) 0 0;
+}
+.metric + .metric {
+  padding-left: clamp(20px, 3vw, 44px);
+  border-left: 1px solid var(--rule);
+}
+
+.metric__figure {
+  display: flex;
+  align-items: baseline;
+  gap: 0.06em;
+  font-family: var(--font-display);
+  /* the numerals are the loudest thing on the page after the headline */
+  font-size: clamp(3.6rem, 9vw, 9rem);
+  font-weight: 500;
+  line-height: 0.82;
+  letter-spacing: -0.055em;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+}
+.metric__suffix {
+  font-size: 0.26em;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  font-weight: 500;
+  align-self: flex-start;
+  padding-top: 0.4em;
+}
+
+.metric__label {
+  margin-top: clamp(16px, 2.2vw, 26px);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@media (max-width: 720px) {
+  .metrics__row {
+    grid-template-columns: 1fr;
+    border-top: 0;
+  }
+  .metric {
+    padding: clamp(20px, 5vw, 28px) 0;
+    border-top: 1px solid var(--rule-mid);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  .metric + .metric {
+    padding-left: 0;
+    border-left: 0;
+  }
+  .metric__figure {
+    font-size: clamp(2.8rem, 15vw, 4.4rem);
+  }
+  .metric__label {
+    margin-top: 0;
+    text-align: right;
+    max-width: 8em;
+  }
+}

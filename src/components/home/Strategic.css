@@ -1,0 +1,187 @@
+.strat__head {
+  margin-bottom: clamp(48px, 6vw, 84px);
+}
+.strat__intro {
+  max-width: 64ch;
+}
+
+.strat__body {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+
+/* ---- sticky chapter index ---- */
+.strat__nav {
+  position: sticky;
+  top: 116px;
+  border-top: 1px solid var(--rule-mid);
+}
+.strat__navlink {
+  display: block;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: var(--fs-small);
+  color: var(--muted);
+  transition:
+    color var(--dur-fast) var(--ease),
+    padding-left var(--dur-med) var(--ease);
+  position: relative;
+}
+.strat__navlink::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--navy);
+  transform: scaleY(0);
+  transition: transform var(--dur-med) var(--ease);
+}
+.strat__navlink:hover {
+  color: var(--ink);
+}
+.strat__navlink.is-active {
+  color: var(--navy);
+  padding-left: 14px;
+}
+.strat__navlink.is-active::before {
+  transform: scaleY(1);
+}
+.strat__navn {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  color: var(--sky);
+}
+
+/* ---- chapters ---- */
+.strat__chapters {
+  min-width: 0;
+  position: relative;
+}
+.strat__chapter {
+  border-top: 1px solid var(--rule-mid);
+  padding-block: clamp(30px, 4vw, 52px);
+  scroll-margin-top: 120px;
+}
+.strat__chapter:last-of-type {
+  border-bottom: 1px solid var(--rule-mid);
+}
+.strat__n {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: var(--sky);
+  margin-bottom: 16px;
+}
+.strat__title {
+  font-size: clamp(1.5rem, 2.7vw, 2.3rem);
+  line-height: 1.06;
+  margin-bottom: 18px;
+  max-width: 20ch;
+}
+.strat__lead {
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+  color: var(--ink);
+  opacity: 0.8;
+  max-width: 60ch;
+  /* a rule that ties the lead to its chapter number */
+  border-left: 1px solid var(--navy);
+  padding-left: clamp(16px, 2vw, 24px);
+}
+
+.strat__points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(22px, 3vw, 40px);
+  margin-top: clamp(28px, 3.4vw, 42px);
+}
+.strat__point dt {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+}
+.strat__point dd {
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 44ch;
+}
+
+/* ---- collapsible variant (narrow screens) ---- */
+.strat__chapter--collapsible {
+  padding-block: 0;
+}
+.strat__summary {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding-block: clamp(20px, 5vw, 26px);
+  cursor: pointer;
+  list-style: none;
+}
+.strat__summary::-webkit-details-marker {
+  display: none;
+}
+.strat__summary .strat__n {
+  margin-bottom: 0;
+}
+.strat__summary .strat__title {
+  margin-bottom: 0;
+  font-size: clamp(1.25rem, 4.6vw, 1.55rem);
+  max-width: none;
+}
+.strat__marker {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  flex: none;
+}
+.strat__marker::before,
+.strat__marker::after {
+  content: "";
+  position: absolute;
+  background: var(--navy);
+  transition: transform var(--dur-med) var(--ease);
+}
+.strat__marker::before {
+  inset: 7px 0 auto;
+  height: 1.5px;
+}
+.strat__marker::after {
+  inset: 0 7px auto;
+  width: 1.5px;
+  height: 100%;
+}
+.strat__chapter--collapsible[open] .strat__marker::after {
+  transform: scaleY(0);
+}
+.strat__inner {
+  padding-bottom: clamp(24px, 6vw, 34px);
+}
+.strat__chapter--collapsible .strat__points {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 900px) {
+  .strat__body {
+    grid-template-columns: 1fr;
+  }
+  .strat__lead {
+    max-width: none;
+  }
+  .strat__point dd {
+    max-width: none;
+  }
+}
