@@ -5,6 +5,7 @@ import { Arrow } from "../components/ui/Arrow";
 import { contactPage } from "../data/content";
 import { mailto, site, social } from "../data/site";
 import { Seo, professionalService } from "../lib/seo";
+import { submitForm } from "../lib/submitForm";
 import "./Contact.css";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -24,7 +25,10 @@ export default function Contact() {
   const [values, setValues] = useState(EMPTY);
   const [interests, setInterests] = useState([]);
   const [errors, setErrors] = useState({});
-  const [state, setState] = useState("idle"); // idle | sending | opened
+  // idle | sending | sent | drafted | error
+  const [state, setState] = useState("idle");
+  const [sendError, setSendError] = useState("");
+  const [botField, setBotField] = useState("");
 
   const set = (k) => (e) => {
     const v = e.target.type === "checkbox" ? e.target.checked : e.target.value;
@@ -48,7 +52,7 @@ export default function Contact() {
     return e;
   };
 
-  const onSubmit = (ev) => {
+  const onSubmit = async (ev) => {
     ev.preventDefault();
     const next = validate();
     setErrors(next);
@@ -59,6 +63,8 @@ export default function Contact() {
     }
 
     setState("sending");
+    setSendError("");
+
     const lines = [
       `Name: ${values.name.trim()}`,
       values.company.trim() && `Company: ${values.company.trim()}`,
@@ -70,13 +76,40 @@ export default function Contact() {
       values.message.trim(),
     ].filter(Boolean);
 
-    window.location.href = mailto({
+    const draft = mailto({
       subject: `Enquiry from ${values.name.trim()}${
         values.company.trim() ? ` — ${values.company.trim()}` : ""
       }`,
       body: lines.join("\n"),
     });
-    window.setTimeout(() => setState("opened"), 600);
+
+    const result = await submitForm(
+      {
+        kind: "enquiry",
+        name: values.name.trim(),
+        email: values.email.trim(),
+        company: values.company.trim(),
+        website: values.website.trim(),
+        phone: values.phone.trim(),
+        interests,
+        message: values.message.trim(),
+        botField,
+      },
+      draft,
+    );
+
+    if (!result.ok) {
+      setSendError(result.error);
+      setState("error");
+      return;
+    }
+    if (result.via === "email") {
+      setValues(EMPTY);
+      setInterests([]);
+      setState("sent");
+    } else {
+      setState("drafted");
+    }
   };
 
   const field = (key, label, props = {}) => (
@@ -148,9 +181,9 @@ export default function Contact() {
             <Reveal delay={160} className="ctc__block ctc__how">
               <p className="label">How this works</p>
               <p>
-                Sending the form opens a prefilled message in your own mail app,
-                addressed to {site.email}. Nothing is stored on this site — you press
-                send, and it comes straight to Andreea.
+                Your message goes straight to {site.email}. Andreea replies to the
+                address you give — usually with a question or two about where your
+                email channel is now.
               </p>
             </Reveal>
           </aside>
@@ -245,6 +278,19 @@ export default function Contact() {
                   )}
                 </div>
 
+                {/* Honeypot: hidden from people, catnip for bots. */}
+                <div className="cf__bot" aria-hidden="true">
+                  <label htmlFor={`${uid}-hp`}>Leave this field empty</label>
+                  <input
+                    id={`${uid}-hp`}
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={botField}
+                    onChange={(e) => setBotField(e.target.value)}
+                  />
+                </div>
+
                 <div className="cf__consent">
                   <input
                     type="checkbox"
@@ -273,13 +319,18 @@ export default function Contact() {
 
               <div className="cf__foot">
                 <button type="submit" className="btn btn--solid" disabled={state === "sending"}>
-                  <span>{state === "sending" ? "Opening…" : "Send enquiry"}</span>
+                  <span>{state === "sending" ? "Sending…" : "Send enquiry"}</span>
                   <Arrow className="btn__arrow" />
                 </button>
-                <p className="cf__status" role="status">
-                  {state === "opened"
-                    ? "Your mail app should have opened with everything filled in — press send and it's on its way."
-                    : ""}
+                <p
+                  className={`cf__status${state === "error" ? " cf__status--error" : ""}`}
+                  role="status"
+                >
+                  {state === "sent" &&
+                    "Sent — thank you. Your enquiry is in Andreea's inbox and she'll reply to the address you gave."}
+                  {state === "drafted" &&
+                    "Your mail app should have opened with everything filled in — press send and it's on its way."}
+                  {state === "error" && sendError}
                 </p>
               </div>
             </form>

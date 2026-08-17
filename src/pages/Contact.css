@@ -277,3 +277,17 @@
     max-width: none;
   }
 }
+
+/* Honeypot — off-screen rather than display:none, since some bots skip
+   hidden fields but happily fill positioned ones. */
+.cf__bot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.cf__status--error {
+  border-left-color: var(--error);
+  color: var(--error);
+}

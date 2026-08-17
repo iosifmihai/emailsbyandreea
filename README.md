@@ -93,15 +93,38 @@ the trail is dropped entirely.
 
 ## Forms
 
-The contact and newsletter forms validate in the browser, then compose a
-prefilled message to `contact@emailsbyandreea.com` and hand off to the visitor's
-own mail client. There is no backend, and nothing reports success that did not
-happen.
+Both forms validate in the browser, then POST to `api/contact.js`, a Vercel
+serverless function that emails the submission on through Resend. The API key
+stays on the server, so it is never exposed to visitors, and a submission is
+recorded the moment the button is pressed rather than depending on the visitor
+completing a handoff to their own mail client.
 
-To move to a hosted form service later, replace the `window.location.href =
-mailto(...)` call in `pages/Contact.jsx` and `components/ui/NewsletterForm.jsx`
-with a `fetch` POST — the validation, loading, error and success states are
-already in place.
+`reply_to` is set to the sender's address, so replying from the inbox goes
+straight back to them.
+
+Each form carries an off-screen honeypot field. Anything that fills it gets a
+200 and no email — a bot learns nothing from the response.
+
+**Fallback.** Where the function isn't reachable — local dev, or a host without
+it — the form quietly reverts to opening a prefilled mail draft and says which
+of the two happened. Nothing ever reports success that did not occur.
+
+### Turning on delivery
+
+1. Create a free account at [resend.com](https://resend.com) and generate an API
+   key under **API Keys**.
+2. In Vercel → Settings → Environment Variables, add `RESEND_API_KEY`.
+3. Redeploy.
+
+Optional variables: `CONTACT_TO` (defaults to `contact@emailsbyandreea.com`) and
+`CONTACT_FROM`.
+
+Until a domain is verified in Resend, mail goes out from their shared
+`onboarding@resend.dev` sender, which can only deliver to the address the Resend
+account was opened with. Verifying `emailsbyandreea.com` in Resend (a few DNS
+records) lifts that limit and puts the mail on the brand's own domain — worth
+doing, and something the site's owner does professionally anyway. Then set
+`CONTACT_FROM` to e.g. `Emails by Andreea <site@emailsbyandreea.com>`.
 
 ## Deployment
 

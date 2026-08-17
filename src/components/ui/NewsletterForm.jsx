@@ -1,5 +1,6 @@
 import { useId, useState } from "react";
 import { mailto, site } from "../../data/site";
+import { submitForm } from "../../lib/submitForm";
 import { Arrow } from "./Arrow";
 import "./NewsletterForm.css";
 
@@ -8,16 +9,19 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 /**
  * Newsletter sign-up.
  *
- * There is no server behind this site, so rather than fake a subscription the
- * form composes a real, prefilled message in the visitor's own mail client and
- * says plainly that that is what happened. Validation runs here; the send
- * happens in their client, where they can see and confirm it.
+ * Posts to the serverless function, which emails the signup on. Where that
+ * function isn't available — local dev, or a host without it — it falls back
+ * to a prefilled mail draft and says so. Nothing ever reports success that did
+ * not happen.
  */
 export default function NewsletterForm({ tone = "light", compact = false }) {
   const uid = useId();
   const [values, setValues] = useState({ name: "", email: "" });
   const [errors, setErrors] = useState({});
-  const [state, setState] = useState("idle"); // idle | sending | opened
+  // idle | sending | sent | drafted | error
+  const [state, setState] = useState("idle");
+  const [sendError, setSendError] = useState("");
+  const [botField, setBotField] = useState("");
 
   const set = (k) => (e) => {
     setValues((v) => ({ ...v, [k]: e.target.value }));
@@ -33,7 +37,7 @@ export default function NewsletterForm({ tone = "light", compact = false }) {
     return next;
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     const next = validate();
     setErrors(next);
@@ -43,13 +47,34 @@ export default function NewsletterForm({ tone = "light", compact = false }) {
       return;
     }
     setState("sending");
-    const href = mailto({
+    setSendError("");
+
+    const draft = mailto({
       subject: "Newsletter subscription",
       body: `Please add me to the Emails by Andreea newsletter.\n\nName: ${values.name.trim()}\nEmail: ${values.email.trim()}\n`,
     });
-    window.location.href = href;
-    // The browser hands off to the mail client; there is nothing to await.
-    window.setTimeout(() => setState("opened"), 600);
+
+    const result = await submitForm(
+      {
+        kind: "newsletter",
+        name: values.name.trim(),
+        email: values.email.trim(),
+        botField,
+      },
+      draft,
+    );
+
+    if (!result.ok) {
+      setSendError(result.error);
+      setState("error");
+      return;
+    }
+    if (result.via === "email") {
+      setValues({ name: "", email: "" });
+      setState("sent");
+    } else {
+      setState("drafted");
+    }
   };
 
   return (
@@ -107,20 +132,35 @@ export default function NewsletterForm({ tone = "light", compact = false }) {
         </div>
 
         <button type="submit" className="nl__submit" disabled={state === "sending"}>
-          <span>{state === "sending" ? "Opening…" : "Subscribe"}</span>
+          <span>{state === "sending" ? "Sending…" : "Subscribe"}</span>
           <Arrow className="btn__arrow" />
         </button>
       </div>
 
-      <p className="nl__status" role="status">
-        {state === "opened"
-          ? `Your mail app should have opened with the message ready — press send and you're on the list.`
-          : ""}
+      <div className="nl__bot" aria-hidden="true">
+        <label htmlFor={`${uid}-hp`}>Leave this field empty</label>
+        <input
+          id={`${uid}-hp`}
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={botField}
+          onChange={(e) => setBotField(e.target.value)}
+        />
+      </div>
+
+      <p
+        className={`nl__status${state === "error" ? " nl__status--error" : ""}`}
+        role="status"
+      >
+        {state === "sent" && "You are on the list — thank you."}
+        {state === "drafted" &&
+          "Your mail app should have opened with the message ready — press send."}
+        {state === "error" && sendError}
       </p>
 
       <p className="nl__note">
-        Subscribing opens a prefilled email to {site.email}. Your details go straight to
-        Andreea and are never shared.
+        Your details go straight to Andreea at {site.email} and are never shared.
       </p>
     </form>
   );
