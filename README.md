@@ -167,7 +167,21 @@ VITE_SANITY_DATASET=production
 project → API → CORS origins, and add your site's address (and
 `http://localhost:5173` for local work). Read-only, no credentials needed.
 
-**5. Publish the studio** so it can be used from any browser:
+**5. Load the current site content into the CMS** so the studio opens with real
+entries rather than empty lists — the six reviews, eight brands, eight platforms
+and all the site copy, images included:
+
+```bash
+cd studio
+node seed/generate.mjs
+npx sanity dataset import seed/seed.ndjson production --replace
+```
+
+The seed is built from `src/data`, so it can never disagree with what the site
+shows. Safe to re-run: `--replace` overwrites those documents rather than
+duplicating them.
+
+**6. Publish the studio** so it can be used from any browser:
 
 ```bash
 cd studio
