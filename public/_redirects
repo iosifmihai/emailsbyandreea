@@ -1,3 +1,9 @@
-# Client-side routing: every path must serve index.html so deep links and
-# refreshes resolve. Netlify / Cloudflare Pages read this file directly.
-/*  /index.html  200
+# Netlify / Cloudflare Pages read this file directly. Vercel uses vercel.json,
+# which says the same thing.
+#
+# Every page of the site is built to its own HTML file, so only an article
+# published since the last build needs the app to resolve it. Anything else
+# that matches nothing should get a real 404 rather than the soft 200 a
+# catch-all would return.
+/blog/*  /index.html  200
+/*       /404.html    404

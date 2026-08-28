@@ -11,7 +11,7 @@ import Newsletter from "../components/home/Newsletter";
 import Outcomes from "../components/home/Outcomes";
 import Strategic from "../components/home/Strategic";
 import FinalCTA from "../components/home/FinalCTA";
-import { Seo, professionalService } from "../lib/seo";
+import { Seo, professionalService, websiteSchema } from "../lib/seo";
 
 // The email card rests in the hero; the first scroll folds it into a plane and
 // flies it to Meet Me. After that it hops one section per scroll, all the way
@@ -37,7 +37,7 @@ export default function Home() {
         title="Expert E-commerce Email Marketing"
         description="High-performance email and SMS lifecycle systems for established e-commerce brands. Strategy, automation, deliverability and reporting that turn retention into predictable revenue."
         path="/"
-        jsonLd={professionalService}
+        jsonLd={[professionalService, websiteSchema]}
       />
 
       {/* Fixed overlay that owns the email → paper-plane journey. It locates

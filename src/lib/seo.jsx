@@ -25,28 +25,52 @@ function setLink(rel, href) {
   el.setAttribute("href", href);
 }
 
+/* ------------------------------------------------- build-time capture -- */
+
+/* At build time there is no document to write into, so each route's tags are
+   collected here instead and written straight into its HTML file. */
+const SSR = typeof document === "undefined";
+let sink = null;
+
+export function resetHead() {
+  sink = [];
+}
+
+export function collectHead() {
+  const out = sink ?? [];
+  sink = null;
+  return out;
+}
+
 /**
- * Head manager for the SPA. Every route renders exactly one <Seo>, which owns
- * the title, description, canonical, social cards and structured data.
+ * Head manager. Every route renders exactly one <Seo>, which owns the title,
+ * description, canonical, social cards and structured data.
  *
- * Note: tags are applied on the client. Crawlers that execute JS (Google
- * among them) read them; link-preview scrapers that do not run JS will fall
- * back to the defaults in index.html. Prerendering the routes at build time
- * is the upgrade path if richer link previews are needed.
+ * The same description serves twice: at build time it is written into the
+ * page's HTML, so link-preview scrapers and crawlers that do not run
+ * JavaScript read it; in the browser it is applied to the live document, so
+ * client-side navigation keeps the head correct.
  */
 export function Seo({
   title,
   description,
   path = "/",
-  image = "/assets/brand/logo.png",
+  image = "/assets/brand/share-card.png",
   type = "website",
   jsonLd,
   noindex = false,
+  article,
 }) {
   const fullTitle = title ? `${title} | ${SUFFIX}` : SUFFIX;
   const url = `${site.origin}${path === "/" ? "/" : path}`;
   const imageUrl = image.startsWith("http") ? image : `${site.origin}${image}`;
+  /* An array is valid JSON-LD too, so a page can describe itself in more than
+     one way — a service and its place in the site, say — from one tag. */
   const ld = jsonLd ? JSON.stringify(jsonLd) : null;
+
+  if (SSR && sink) {
+    sink.push({ fullTitle, description, url, imageUrl, type, noindex, ld, article });
+  }
 
   useEffect(() => {
     document.title = fullTitle;
@@ -83,8 +107,16 @@ export function Seo({
 
   useEffect(() => {
     if (!ld) return undefined;
+    /* The page already carries this from the build. Clearing it first is what
+       stops the same description being stated twice, once in the file and
+       once by React. */
+    document.head
+      .querySelectorAll('script[type="application/ld+json"][data-seo]')
+      .forEach((node) => node.remove());
+
     const script = document.createElement("script");
     script.type = "application/ld+json";
+    script.setAttribute("data-seo", "");
     script.textContent = ld;
     document.head.appendChild(script);
     return () => script.remove();
@@ -118,6 +150,20 @@ export const professionalService = {
     "https://www.facebook.com/profile.php?id=61569190987440",
     "https://www.linkedin.com/in/andreea-p%C4%83curar-1a7b8924b/",
   ],
+};
+
+/**
+ * Names the site itself, which is what lets a search engine show the brand
+ * rather than the bare domain above a result.
+ */
+export const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: site.name,
+  alternateName: site.person,
+  url: site.origin,
+  inLanguage: "en-GB",
+  publisher: { "@type": "Organization", name: site.name, url: site.origin },
 };
 
 export function serviceSchema(service) {

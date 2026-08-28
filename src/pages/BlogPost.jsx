@@ -70,6 +70,7 @@ export default function BlogPost() {
     "@type": "Article",
     headline: post.title,
     datePublished: post.publishedAt,
+    dateModified: post._updatedAt || post.publishedAt,
     description: post.metaDescription || post.excerpt || undefined,
     image: share || undefined,
     author: { "@type": "Person", name: site.person },
@@ -87,6 +88,7 @@ export default function BlogPost() {
         type="article"
         noindex={post.noindex}
         jsonLd={articleSchema}
+        article={{ published: post.publishedAt, modified: post._updatedAt }}
       />
 
       <article className="post">

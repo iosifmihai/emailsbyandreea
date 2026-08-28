@@ -17,7 +17,6 @@ export default function About() {
         title={aboutPage.metaTitle}
         description={aboutPage.metaDescription}
         path="/about"
-        image="/assets/brand/portrait-about.png"
         type="profile"
         jsonLd={personSchema()}
       />

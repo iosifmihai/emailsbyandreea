@@ -62,21 +62,67 @@ export const imageAlt = (source, fallback = "") => source?.alt || fallback;
  *   "off"      — no CMS configured, use the built-in content
  *   "loading" | "ready" | "error"
  */
+/* ---------------------------------------------------------- preloading --
+
+   Hooks fetch in an effect, and effects do not run while a page is being
+   rendered to a file at build time — an article would be written out as its
+   own loading state. So the build fetches first and leaves the answers here,
+   where the hook finds them on its very first render.
+*/
+
+const preloaded = new Map();
+const consumed = new Set();
+
+const cacheKey = (query, params) => JSON.stringify([query, params ?? null]);
+
+export function primeSanity(query, params, data) {
+  preloaded.set(cacheKey(query, params), data);
+}
+
+/**
+ * What this page actually read, so the build can hand exactly that to the
+ * browser and no more. Without it React would mount over a finished article
+ * and briefly put its loading state back while it fetched the same thing.
+ */
+export function takePreloadsUsed() {
+  const out = [...consumed].map((key) => [key, preloaded.get(key)]);
+  consumed.clear();
+  return out;
+}
+
+/* The build writes this into each page; picking it up here is what makes the
+   browser's first render match the HTML it was given. */
+if (typeof window !== "undefined" && Array.isArray(window.__PRELOAD__)) {
+  window.__PRELOAD__.forEach(([key, data]) => preloaded.set(key, data));
+}
+
 export function useSanity(query, params) {
-  const key = JSON.stringify([query, params ?? null]);
-  const [state, setState] = useState(() => ({
-    data: null,
-    status: isSanityConfigured ? "loading" : "off",
-  }));
+  const key = cacheKey(query, params);
+  const [state, setState] = useState(() => {
+    if (preloaded.has(key)) {
+      consumed.add(key);
+      return { data: preloaded.get(key), status: "ready" };
+    }
+    return { data: null, status: isSanityConfigured ? "loading" : "off" };
+  });
 
   useEffect(() => {
     if (!isSanityConfigured) return undefined;
     let live = true;
-    setState((s) => ({ ...s, status: "loading" }));
+
+    /* Content already in hand — from the build, or from the last time this
+       query ran — stays on screen while it is checked for updates. Only a page
+       with nothing to show says it is loading. */
+    setState((s) => (s.data ? s : { ...s, status: "loading" }));
 
     sanityFetch(query, params)
       .then((data) => live && setState({ data, status: "ready" }))
-      .catch(() => live && setState({ data: null, status: "error" }));
+      // A failed refresh must not empty a page that is already rendered.
+      .catch(
+        () =>
+          live &&
+          setState((s) => (s.data ? { ...s, status: "ready" } : { data: null, status: "error" })),
+      );
 
     return () => {
       live = false;
@@ -96,7 +142,7 @@ export const QUERIES = {
   }`,
 
   postBySlug: `*[_type == "blogPost" && slug.current == $slug][0]{
-    _id, title, "slug": slug.current, excerpt, publishedAt, tags, thumbnail, body,
+    _id, title, "slug": slug.current, excerpt, publishedAt, _updatedAt, tags, thumbnail, body,
     metaTitle, metaDescription, ogImage, noindex
   }`,
 

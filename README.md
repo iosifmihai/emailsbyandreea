@@ -128,17 +128,44 @@ doing, and something the site's owner does professionally anyway. Then set
 
 ## Deployment
 
-Static output in `dist/`. The site uses client-side routing, so the host must
-serve `index.html` for unmatched paths. `public/_redirects` covers Netlify and
-Cloudflare Pages; on other hosts add the equivalent SPA rewrite.
+Static output in `dist/`, one real HTML file per page.
 
-### Known limitation: meta tags are client-rendered
+`npm run build` runs four things: the browser bundle, the same app compiled for
+Node, then `scripts/prerender.mjs`, which renders every address to its own file.
+`vercel.json` therefore only needs a rewrite for `/blog/*`, so an article
+published since the last build still resolves. Everything else is a file on
+disk, and an address that matches nothing gets a real 404 from `404.html`
+instead of the soft 200 a catch-all rewrite returns.
 
-`<Seo>` sets titles, descriptions, canonicals, Open Graph and JSON-LD on the
-client. Crawlers that execute JavaScript read them correctly, but link-preview
-scrapers that do not run JS fall back to the defaults in `index.html`. If richer
-link previews matter, prerender the 18 routes at build time — the route list is
-already centralised in `scripts/gen-sitemap.mjs`.
+# SEO
+
+The pages are built, not assembled in the browser, so a crawler receives the
+words and the head tags in the response rather than an empty `<div>`.
+
+- **Per page**: title, description, canonical, Open Graph, Twitter card, and a
+  1200x630 share image built from the logo by `scripts/gen-share-card.mjs`
+- **Structured data**: the business and the site on the homepage, Service plus
+  FAQPage on each service, Article with its dates on each post, Person on the
+  about page, Review with the aggregate rating, and a BreadcrumbList wherever
+  `PageHero` draws a trail
+- **Sitemap**: `scripts/gen-sitemap.mjs` builds it from the same route list the
+  prerenderer uses, articles included, so the two cannot disagree
+- **Redirects**: the WordPress addresses that changed are 301'd in
+  `vercel.json`, so the links pointing at them keep their value
+- **Previews stay out of the index**: any `*.vercel.app` host is served with
+  `X-Robots-Tag: noindex`, so a preview cannot compete with the real domain
+
+Text edited through the site is fetched at build time as well, so the version a
+crawler reads matches the live one from the next deploy onwards.
+
+## The one thing left to do
+
+**`emailsbyandreea.com` still points at the old WordPress site.** Every
+canonical, the sitemap and the structured data name that domain, which is
+correct only once it serves this site. Until the domain is moved to Vercel, the
+new site is deliberately invisible to search engines and the old one is what
+ranks. Moving it is the single highest-value SEO action available, and after it
+nothing in the code needs changing.
 
 ---
 
@@ -286,11 +313,12 @@ To try it on `localhost`, put the same two values in `.env` (git ignores it).
 Content changes appear on the site as soon as they are published; only code
 changes need a redeploy.
 
-## Known limitation
+## A note on freshness
 
-The site renders in the browser, so meta tags and article text are applied on
-the client. Google executes JavaScript and reads them, but non-JS link-preview
-scrapers see the defaults from `index.html`. If the blog becomes a significant
-traffic channel, moving to Next.js on Vercel would render each article on the
-server and remove that caveat — the Sanity schemas and queries carry over
-unchanged.
+Content published or edited in the CMS reaches visitors immediately: the browser
+fetches it on load. What a crawler sees is the copy captured at the last build,
+since that is what is written into the HTML files. A redeploy brings the two
+back in step, and Vercel redeploys on every push.
+
+If that gap ever matters, a Sanity webhook pointed at a Vercel deploy hook would
+rebuild the site whenever something is published.
