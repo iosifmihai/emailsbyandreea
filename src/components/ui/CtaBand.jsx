@@ -3,6 +3,7 @@ import { site } from "../../data/site";
 import { Reveal } from "./Reveal";
 import { Arrow } from "./Arrow";
 import "./CtaBand.css";
+import { ui } from "../../data/ui";
 
 /**
  * The closing invitation used at the foot of interior pages. `tone` lets a
@@ -29,7 +30,7 @@ export default function CtaBand({
             <Arrow className="btn__arrow" />
           </Link>
           <a href={`mailto:${site.email}`} className="arrow-link">
-            <span>Send me an email</span>
+            <span>{ui.global.sendEmail}</span>
             <Arrow />
           </a>
         </Reveal>

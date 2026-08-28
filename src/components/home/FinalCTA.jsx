@@ -4,6 +4,7 @@ import { site } from "../../data/site";
 import { Reveal } from "../ui/Reveal";
 import { Arrow } from "../ui/Arrow";
 import "./FinalCTA.css";
+import { ui } from "../../data/ui";
 
 export default function FinalCTA() {
   return (
@@ -12,7 +13,7 @@ export default function FinalCTA() {
         <span id="plane-cta" className="plane-stop plane-stop--r plane-stop--low" aria-hidden="true" />
         <Reveal className="fcta__label">
           <p className="label">
-            <span>Next step</span>
+            <span>{ui.home.finalLabel}</span>
           </p>
         </Reveal>
 

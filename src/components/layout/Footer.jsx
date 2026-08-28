@@ -4,6 +4,7 @@ import { services } from "../../data/services";
 import NewsletterForm from "../ui/NewsletterForm";
 import { Arrow } from "../ui/Arrow";
 import "./Footer.css";
+import { ui } from "../../data/ui";
 
 const discover = [
   { label: "Journal", to: "/blog" },
@@ -41,7 +42,7 @@ export default function Footer() {
           </div>
 
           <div className="ftr__signup">
-            <p className="label">Subscribe to my newsletter</p>
+            <p className="label">{ui.footer.newsletterLabel}</p>
             <p className="ftr__signup-copy">
               Noteworthy news and fresh e-commerce insights, a few times a year.
             </p>
@@ -51,7 +52,7 @@ export default function Footer() {
 
         <nav className="ftr__cols" aria-label="Footer">
           <div className="ftr__col ftr__col--wide">
-            <h2 className="ftr__h">Email Services</h2>
+            <h2 className="ftr__h">{ui.footer.colServices}</h2>
             <ul className="ftr__links ftr__links--split">
               {services.map((s) => (
                 <li key={s.slug}>
@@ -64,7 +65,7 @@ export default function Footer() {
           </div>
 
           <div className="ftr__col">
-            <h2 className="ftr__h">Discover</h2>
+            <h2 className="ftr__h">{ui.footer.colDiscover}</h2>
             <ul className="ftr__links">
               {discover.map((l) => (
                 <li key={l.to}>
@@ -75,7 +76,7 @@ export default function Footer() {
           </div>
 
           <div className="ftr__col">
-            <h2 className="ftr__h">Policies</h2>
+            <h2 className="ftr__h">{ui.footer.colPolicies}</h2>
             <ul className="ftr__links">
               {legalNav.map((l) => (
                 <li key={l.to}>
@@ -86,7 +87,7 @@ export default function Footer() {
           </div>
 
           <div className="ftr__col">
-            <h2 className="ftr__h">Elsewhere</h2>
+            <h2 className="ftr__h">{ui.footer.colElsewhere}</h2>
             <ul className="ftr__links">
               {social.map((s) => (
                 <li key={s.label}>

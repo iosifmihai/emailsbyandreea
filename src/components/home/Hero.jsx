@@ -3,6 +3,7 @@ import { hero } from "../../data/content";
 import { Arrow } from "../ui/Arrow";
 import { useReveal } from "../../hooks/useReveal";
 import "./Hero.css";
+import { ui } from "../../data/ui";
 
 // Breaks are authored, not left to the browser — the line lengths are part of
 // the composition.
@@ -58,7 +59,7 @@ export default function Hero() {
 
       <div className="shell hero__base">
         <p className="hero__cue" aria-hidden="true">
-          <span>Scroll</span>
+          <span>{ui.home.scroll}</span>
           <i />
         </p>
       </div>

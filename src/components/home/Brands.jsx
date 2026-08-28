@@ -2,6 +2,7 @@ import { brands as fallbackBrands } from "../../data/credentials";
 import { useBrands } from "../../lib/sanity";
 import { Reveal } from "../ui/Reveal";
 import "./Brands.css";
+import { ui } from "../../data/ui";
 
 export default function Brands() {
   const brands = useBrands(fallbackBrands);
@@ -12,7 +13,7 @@ export default function Brands() {
         <span id="plane-brands" className="plane-stop plane-stop--l" aria-hidden="true" />
         <Reveal className="brands__head">
           <h2 id="brands-h" className="label label--tight">
-            <span>Brands Managed</span>
+            <span>{ui.home.brandsLabel}</span>
           </h2>
         </Reveal>
 

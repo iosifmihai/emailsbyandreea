@@ -4,6 +4,7 @@ import { Reveal, SplitLines } from "../ui/Reveal";
 import { useReveal } from "../../hooks/useReveal";
 import { Arrow } from "../ui/Arrow";
 import "./MeetMe.css";
+import { ui } from "../../data/ui";
 
 export default function MeetMe() {
   const imgRef = useReveal({ threshold: 0.18 });
@@ -44,8 +45,8 @@ export default function MeetMe() {
             </Reveal>
 
             <Reveal className="meet__sign" delay={160}>
-              <span>Andreea Păcurar</span>
-              <span>E-mail &amp; SMS Lifecycle Specialist</span>
+              <span>{ui.home.meetName}</span>
+              <span>{ui.home.meetRole}</span>
             </Reveal>
 
             <Reveal delay={220} className="meet__cta">

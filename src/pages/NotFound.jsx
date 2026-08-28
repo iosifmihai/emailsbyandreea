@@ -3,6 +3,7 @@ import { Arrow } from "../components/ui/Arrow";
 import { services } from "../data/services";
 import { Seo } from "../lib/seo";
 import "./NotFound.css";
+import { ui } from "../data/ui";
 
 export default function NotFound() {
   return (
@@ -17,26 +18,26 @@ export default function NotFound() {
       <section className="nf">
         <div className="shell nf__inner">
           <p className="label nf__label">
-            <span>Undeliverable</span>
+            <span>{ui.notFound.label}</span>
           </p>
-          <h1 className="nf__h">This one bounced.</h1>
+          <h1 className="nf__h">{ui.notFound.heading}</h1>
           <p className="lead nf__lead">
-            The page you were after doesn't exist. Here's the rest of the site.
+            {ui.notFound.copy}
           </p>
 
           <div className="btn-row nf__actions">
             <Link to="/" className="btn btn--solid">
-              <span>Back to home</span>
+              <span>{ui.notFound.back}</span>
               <Arrow className="btn__arrow" />
             </Link>
             <Link to="/contact" className="arrow-link">
-              <span>Contact me</span>
+              <span>{ui.global.contactMe}</span>
               <Arrow />
             </Link>
           </div>
 
           <div className="nf__services">
-            <p className="label">All services</p>
+            <p className="label">{ui.global.allServices}</p>
             <ul>
               {services.map((s) => (
                 <li key={s.slug}>

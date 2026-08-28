@@ -1,6 +1,7 @@
 import { outcomes } from "../../data/content";
 import { Reveal, SplitLines } from "../ui/Reveal";
 import "./Outcomes.css";
+import { ui } from "../../data/ui";
 
 export default function Outcomes() {
   return (
@@ -10,7 +11,7 @@ export default function Outcomes() {
         <div className="sec-head out__head">
           <Reveal>
             <p className="label">
-              <span>What it produces</span>
+              <span>{ui.home.outcomesLabel}</span>
             </p>
           </Reveal>
           <div className="sec-head__body">

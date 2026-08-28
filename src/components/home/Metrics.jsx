@@ -2,6 +2,7 @@ import { metrics } from "../../data/credentials";
 import { useCountUp } from "../../hooks/useCountUp";
 import { Reveal } from "../ui/Reveal";
 import "./Metrics.css";
+import { ui } from "../../data/ui";
 
 function Metric({ value, suffix, label }) {
   const [ref, current] = useCountUp(value);
@@ -21,7 +22,7 @@ export default function Metrics() {
     <section className="metrics" aria-labelledby="metrics-h">
       <div className="shell">
         <h2 id="metrics-h" className="label metrics__label">
-          <span>Work to date</span>
+          <span>{ui.home.metricsLabel}</span>
         </h2>
 
         <Reveal className="metrics__row">

@@ -6,6 +6,7 @@ import { aboutPage } from "../data/content";
 import { certificates, platforms } from "../data/credentials";
 import { Seo, personSchema } from "../lib/seo";
 import "./About.css";
+import { ui } from "../data/ui";
 
 export default function About() {
   const imgRef = useReveal({ threshold: 0.2 });
@@ -89,7 +90,7 @@ export default function About() {
           <div className="sec-head abt__exphead">
             <Reveal>
               <p className="label">
-                <span>How I work</span>
+                <span>{ui.about.howLabel}</span>
               </p>
             </Reveal>
             <div className="sec-head__body">
@@ -121,13 +122,13 @@ export default function About() {
           <div className="sec-head abt__credshead">
             <Reveal>
               <p className="label">
-                <span>Credentials</span>
+                <span>{ui.about.credentialsLabel}</span>
               </p>
             </Reveal>
             <div className="sec-head__body">
               <Reveal>
                 <h2 id="creds-h" className="abt__h2">
-                  Verified expertise, not claimed expertise
+                  {ui.about.credentialsHeading}
                 </h2>
               </Reveal>
             </div>

@@ -5,6 +5,7 @@ import { services } from "../../data/services";
 import { Arrow } from "../ui/Arrow";
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll";
 import "./Header.css";
+import { ui } from "../../data/ui";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -120,9 +121,9 @@ export default function Header() {
                     hidden={!servicesOpen}
                   >
                     <div className="svc-panel__head">
-                      <span className="label label--tight">Email services</span>
+                      <span className="label label--tight">{ui.global.emailServices}</span>
                       <Link to="/services" className="svc-panel__all">
-                        All services <Arrow size={11} />
+                        {ui.global.allServices} <Arrow size={11} />
                       </Link>
                     </div>
                     <ul className="svc-panel__grid">
@@ -154,7 +155,7 @@ export default function Header() {
         </nav>
 
         <Link to="/contact" className="hdr__cta">
-          <span>Work With Me</span>
+          <span>{ui.global.workWithMe}</span>
           <Arrow size={12} />
         </Link>
 
@@ -231,7 +232,7 @@ export default function Header() {
 
           <div className="mmenu__foot">
             <Link to="/contact" className="btn btn--solid mmenu__cta">
-              <span>Work With Me</span>
+              <span>{ui.global.workWithMe}</span>
               <Arrow className="btn__arrow" />
             </Link>
             <a href="mailto:contact@emailsbyandreea.com" className="mmenu__mail">

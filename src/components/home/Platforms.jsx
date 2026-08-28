@@ -3,6 +3,7 @@ import { usePlatforms } from "../../lib/sanity";
 import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
 import { Reveal } from "../ui/Reveal";
 import "./Platforms.css";
+import { ui } from "../../data/ui";
 
 function Logo({ name, logo }) {
   return (
@@ -30,10 +31,10 @@ export default function Platforms() {
         <span id="plane-platforms" className="plane-stop plane-stop--l" aria-hidden="true" />
         <Reveal className="platforms__head">
           <h2 id="platforms-h" className="label label--tight">
-            <span>Certified Platforms</span>
+            <span>{ui.home.platformsLabel}</span>
           </h2>
           <p className="platforms__note">
-            Certified and fluent across the stack your brand already runs on.
+            {ui.home.platformsNote}
           </p>
         </Reveal>
       </div>

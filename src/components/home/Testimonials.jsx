@@ -5,6 +5,7 @@ import { useReviews } from "../../lib/sanity";
 import { Reveal, SplitLines } from "../ui/Reveal";
 import { Arrow } from "../ui/Arrow";
 import "./Testimonials.css";
+import { ui } from "../../data/ui";
 
 function Stars({ count }) {
   return (
@@ -55,7 +56,7 @@ export default function Testimonials() {
         <div className="sec-head tst__head">
           <Reveal>
             <p className="label">
-              <span>What my clients say</span>
+              <span>{ui.home.testimonialsLabel}</span>
             </p>
           </Reveal>
           <div className="sec-head__body">
@@ -128,7 +129,7 @@ export default function Testimonials() {
 
         <Reveal className="tst__foot">
           <Link to="/reviews" className="arrow-link">
-            <span>Read all the testimonials</span>
+            <span>{ui.home.testimonialsLink}</span>
             <Arrow />
           </Link>
         </Reveal>

@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 // Only the four paths are needed to declare routes — importing the full policy
 // text here would drag every word of it into the initial bundle.
 import { legalNav } from "./data/site";
+import { ui } from "./data/ui";
 
 // Home ships in the initial bundle; every other route — and the long policy
 // text that comes with it — loads on demand.
@@ -33,7 +34,7 @@ export default function App() {
   return (
     <>
       <a href="#main" className="skip-link">
-        Skip to content
+        {ui.global.skipLink}
       </a>
 
       <ScrollToTop />

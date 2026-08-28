@@ -1,5 +1,6 @@
 import { Reveal } from "./Reveal";
 import "./Faq.css";
+import { ui } from "../../data/ui";
 
 /**
  * FAQ list built on native <details>, so it is keyboard- and
@@ -14,7 +15,7 @@ export default function Faq({ items, title = "Frequently asked" }) {
         <div className="sec-head faq__head">
           <Reveal>
             <p className="label">
-              <span>Questions</span>
+              <span>{ui.global.questions}</span>
             </p>
           </Reveal>
           <div className="sec-head__body">

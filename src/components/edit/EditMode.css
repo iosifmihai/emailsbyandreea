@@ -1,0 +1,267 @@
+/**
+ * The on-site editor. Deliberately unlike the site: a dark, compact tool layer
+ * that sits over the design without pretending to be part of it, so there is
+ * never a doubt about which pixels are the website and which are the controls.
+ *
+ * Everything here is scoped under .ebaedit, which is also the hook the editor
+ * uses to know it is hovering its own chrome rather than the page.
+ */
+
+.ebaedit {
+  --tool-bg: #10161f;
+  --tool-line: #2b3745;
+  --tool-text: #eef2f6;
+  --tool-dim: #93a3b5;
+  --tool-live: #57d09a;
+  font-family: "Montserrat", system-ui, sans-serif;
+  box-sizing: border-box;
+}
+
+.ebaedit *,
+.ebaedit *::before,
+.ebaedit *::after {
+  box-sizing: border-box;
+}
+
+/* While the editor is open the page reads as a surface to pick from, not to
+   browse, so the caret says "select" everywhere. */
+body.ebaedit-on {
+  cursor: default;
+}
+
+/* ------------------------------------------------------------- outline -- */
+
+.ebaedit__hl {
+  position: fixed;
+  z-index: 2147483000;
+  pointer-events: none;
+  border: 1.5px dashed var(--tool-live);
+  border-radius: 3px;
+  background: rgb(87 208 154 / 0.09);
+  transition: all 90ms linear;
+}
+
+/* ----------------------------------------------------------- top bar ---- */
+
+.ebaedit__bar {
+  position: fixed;
+  z-index: 2147483001;
+  left: 50%;
+  bottom: 1.4rem;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.6rem 0.7rem 0.6rem 1rem;
+  border-radius: 999px;
+  background: var(--tool-bg);
+  border: 1px solid var(--tool-line);
+  box-shadow: 0 14px 40px rgb(9 16 25 / 0.4);
+  color: var(--tool-text);
+  font-size: 0.82rem;
+  max-width: calc(100vw - 2rem);
+}
+
+.ebaedit__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--tool-live);
+  flex: none;
+}
+
+.ebaedit__barlabel {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.ebaedit__hint {
+  color: var(--tool-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ------------------------------------------------------------- panel ---- */
+
+.ebaedit__panel {
+  position: fixed;
+  z-index: 2147483002;
+  right: 1.2rem;
+  top: 1.2rem;
+  width: min(400px, calc(100vw - 2.4rem));
+  padding: 1.1rem;
+  border-radius: 12px;
+  background: var(--tool-bg);
+  border: 1px solid var(--tool-line);
+  box-shadow: 0 22px 60px rgb(9 16 25 / 0.45);
+  color: var(--tool-text);
+}
+
+.ebaedit__path {
+  margin: 0 0 0.7rem;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tool-dim);
+  line-height: 1.5;
+}
+
+.ebaedit__area {
+  width: 100%;
+  padding: 0.7rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--tool-line);
+  background: #0a1017;
+  color: var(--tool-text);
+  font: inherit;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  resize: vertical;
+}
+
+.ebaedit__area:focus-visible {
+  outline: 2px solid var(--tool-live);
+  outline-offset: 1px;
+}
+
+.ebaedit__orig {
+  margin: 0.7rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--tool-dim);
+}
+
+.ebaedit__orig span {
+  display: block;
+  font-weight: 600;
+  color: #b9c6d4;
+}
+
+.ebaedit__status {
+  margin: 0.7rem 0 0;
+  font-size: 0.8rem;
+  color: var(--tool-live);
+}
+
+.ebaedit__row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+/* ----------------------------------------------------------- buttons ---- */
+
+.ebaedit__btn,
+.ebaedit__ghost {
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.5rem 0.95rem;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 140ms ease, border-color 140ms ease, opacity 140ms ease;
+}
+
+.ebaedit__btn {
+  background: var(--tool-live);
+  color: #08120d;
+}
+
+.ebaedit__btn:hover:not(:disabled) {
+  background: #6fdcaa;
+}
+
+.ebaedit__ghost {
+  background: transparent;
+  color: var(--tool-dim);
+  border-color: var(--tool-line);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.ebaedit__ghost:hover:not(:disabled) {
+  color: var(--tool-text);
+  border-color: #41505f;
+}
+
+.ebaedit__btn:disabled,
+.ebaedit__ghost:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* -------------------------------------------------------------- gate ---- */
+
+.ebaedit__gate {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483003;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: rgb(9 16 25 / 0.72);
+  backdrop-filter: blur(3px);
+}
+
+.ebaedit__gatebox {
+  width: min(360px, 100%);
+  padding: 1.5rem;
+  border-radius: 14px;
+  background: var(--tool-bg);
+  border: 1px solid var(--tool-line);
+  color: var(--tool-text);
+}
+
+.ebaedit__gatetitle {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.ebaedit__gatenote {
+  margin: 0.4rem 0 1rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--tool-dim);
+}
+
+.ebaedit__input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--tool-line);
+  background: #0a1017;
+  color: var(--tool-text);
+  font: inherit;
+  font-size: 0.92rem;
+}
+
+.ebaedit__input:focus-visible {
+  outline: 2px solid var(--tool-live);
+  outline-offset: 1px;
+}
+
+.ebaedit__error {
+  margin: 0.6rem 0 0;
+  font-size: 0.8rem;
+  color: #ff9a8b;
+}
+
+.ebaedit__gaterow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 640px) {
+  .ebaedit__panel {
+    right: 0.6rem;
+    left: 0.6rem;
+    width: auto;
+  }
+}

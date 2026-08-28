@@ -8,6 +8,7 @@ import { Arrow } from "../components/ui/Arrow";
 import { getService, pillars, serviceBySlug } from "../data/services";
 import { Seo, faqSchema, serviceSchema } from "../lib/seo";
 import "./ServiceDetail.css";
+import { ui } from "../data/ui";
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -51,7 +52,7 @@ export default function ServiceDetail() {
             <div className="shell sec-head">
               <Reveal>
                 <p className="label">
-                  <span>The case</span>
+                  <span>{ui.services.caseLabel}</span>
                 </p>
               </Reveal>
               <div className="sec-head__body">
@@ -72,7 +73,7 @@ export default function ServiceDetail() {
             <div className="shell sec-head">
               <Reveal>
                 <p className="label">
-                  <span>In detail</span>
+                  <span>{ui.services.detailLabel}</span>
                 </p>
               </Reveal>
               <div className="sec-head__body">
@@ -93,7 +94,7 @@ export default function ServiceDetail() {
               <div className="sec-head svc__inclhead">
                 <Reveal>
                   <p className="label">
-                    <span>Scope</span>
+                    <span>{ui.services.scopeLabel}</span>
                   </p>
                 </Reveal>
                 <div className="sec-head__body">
@@ -123,7 +124,7 @@ export default function ServiceDetail() {
             <div className="shell sec-head">
               <Reveal>
                 <p className="label">
-                  <span>Deliverables</span>
+                  <span>{ui.services.deliverablesLabel}</span>
                 </p>
               </Reveal>
               <div className="sec-head__body">
@@ -156,7 +157,7 @@ export default function ServiceDetail() {
           <div className="shell">
             <Reveal>
               <h2 id="rel-h" className="label label--tight svc__relh">
-                <span>Where this leads next</span>
+                <span>{ui.services.nextLabel}</span>
               </h2>
             </Reveal>
             <ul className="svc__relgrid">

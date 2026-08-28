@@ -6,6 +6,7 @@ import { Arrow } from "../components/ui/Arrow";
 import { QUERIES, imageAlt, imageUrl, useSanity } from "../lib/sanity";
 import { Seo } from "../lib/seo";
 import "./Blog.css";
+import { ui } from "../data/ui";
 
 const formatDate = (iso) =>
   iso
@@ -36,7 +37,7 @@ export default function Blog() {
 
       <section className="section blog">
         <div className="shell">
-          {status === "loading" && <p className="blog__state">Loading articles…</p>}
+          {status === "loading" && <p className="blog__state">{ui.blog.loading}</p>}
 
           {status === "off" && (
             <div className="blog__state blog__state--setup">
@@ -52,12 +53,12 @@ export default function Blog() {
 
           {status === "error" && (
             <p className="blog__state">
-              The articles couldn't be loaded just now. Please try again shortly.
+              {ui.blog.failed}
             </p>
           )}
 
           {status === "ready" && (!posts || posts.length === 0) && (
-            <p className="blog__state">No articles published yet, the first one is coming.</p>
+            <p className="blog__state">{ui.blog.empty}</p>
           )}
 
           {status === "ready" && posts?.length > 0 && (

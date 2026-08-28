@@ -6,6 +6,7 @@ import { site } from "../data/site";
 import { Seo } from "../lib/seo";
 import NotFound from "./NotFound";
 import "./Legal.css";
+import { ui } from "../data/ui";
 
 function CookieTable({ group }) {
   return (
@@ -16,11 +17,11 @@ function CookieTable({ group }) {
         <table className="lgl__table">
           <thead>
             <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Purpose</th>
-              <th scope="col">Provider</th>
-              <th scope="col">Type</th>
-              <th scope="col">Expires</th>
+              <th scope="col">{ui.legal.colName}</th>
+              <th scope="col">{ui.legal.colPurpose}</th>
+              <th scope="col">{ui.legal.colProvider}</th>
+              <th scope="col">{ui.legal.colType}</th>
+              <th scope="col">{ui.legal.colExpires}</th>
             </tr>
           </thead>
           <tbody>
@@ -70,7 +71,7 @@ export default function Legal({ slug }) {
         <div className="shell lgl__grid">
           {/* section index, the policies are long, so they get contents */}
           <nav className="lgl__toc" aria-label="On this page">
-            <p className="label label--tight">Contents</p>
+            <p className="label label--tight">{ui.legal.contents}</p>
             <ol>
               {page.sections.map((s, i) => (
                 <li key={s.title}>

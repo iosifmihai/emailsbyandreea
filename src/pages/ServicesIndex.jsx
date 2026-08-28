@@ -8,6 +8,7 @@ import { servicesPage } from "../data/content";
 import { pillars, serviceBySlug, services } from "../data/services";
 import { Seo, faqSchema } from "../lib/seo";
 import "./ServicesIndex.css";
+import { ui } from "../data/ui";
 
 export default function ServicesIndex() {
   return (
@@ -41,7 +42,7 @@ export default function ServicesIndex() {
         <div className="shell sec-head">
           <Reveal>
             <p className="label">
-              <span>Who this is for</span>
+              <span>{ui.services.whoLabel}</span>
             </p>
           </Reveal>
           <div className="sec-head__body">
@@ -69,7 +70,7 @@ export default function ServicesIndex() {
           <div className="sec-head svcidx__pillhead">
             <Reveal>
               <p className="label">
-                <span>Structure</span>
+                <span>{ui.services.structureLabel}</span>
               </p>
             </Reveal>
             <div className="sec-head__body">
@@ -104,7 +105,7 @@ export default function ServicesIndex() {
                     })}
                   </ul>
                   <p className="pillar__core">
-                    <span>Core services</span> {p.core}
+                    <span>{ui.services.coreLabel}</span> {p.core}
                   </p>
                 </div>
               </Reveal>
@@ -118,7 +119,7 @@ export default function ServicesIndex() {
         <div className="shell">
           <Reveal>
             <h2 id="all-h" className="label label--tight svcidx__allh">
-              <span>All nine services</span>
+              <span>{ui.services.allLabel}</span>
             </h2>
           </Reveal>
           <ol className="svcidx__grid">

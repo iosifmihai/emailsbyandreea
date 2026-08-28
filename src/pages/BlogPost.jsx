@@ -7,6 +7,7 @@ import { QUERIES, imageAlt, imageUrl, useSanity } from "../lib/sanity";
 import { Seo } from "../lib/seo";
 import { site } from "../data/site";
 import "./Blog.css";
+import { ui } from "../data/ui";
 
 const formatDate = (iso) =>
   iso
@@ -53,7 +54,7 @@ export default function BlogPost() {
     return (
       <div className="post post--pending">
         <div className="shell">
-          <p className="blog__state">This article couldn't be loaded just now.</p>
+          <p className="blog__state">{ui.blog.postFailed}</p>
         </div>
       </div>
     );
@@ -128,7 +129,7 @@ export default function BlogPost() {
 
           <p className="post__back">
             <Link to="/blog" className="arrow-link">
-              <span>All articles</span>
+              <span>{ui.blog.allArticles}</span>
               <Arrow />
             </Link>
           </p>

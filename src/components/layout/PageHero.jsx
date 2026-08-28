@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./PageHero.css";
+import { ui } from "../../data/ui";
 
 /**
  * The opening block for every interior page. Breadcrumb and eyebrow sit in a
@@ -21,7 +22,7 @@ export default function PageHero({
           <nav className="phero__crumbs" aria-label="Breadcrumb">
             <ol>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">{ui.global.home}</Link>
               </li>
               {crumbs.map((c) => (
                 <li key={c.label}>

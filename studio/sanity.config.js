@@ -24,6 +24,10 @@ export default defineConfig({
               .title("Website text")
               .id("siteContent")
               .child(S.document().schemaType("siteContent").documentId("siteContent")),
+            S.listItem()
+              .title("Edited text")
+              .id("siteCopy")
+              .child(S.document().schemaType("siteCopy").documentId("siteCopy")),
             S.divider(),
             S.documentTypeListItem("blogPost").title("Blog posts"),
             S.documentTypeListItem("review").title("Reviews"),

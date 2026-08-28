@@ -226,7 +226,55 @@ repo, and confirm:
 
 `vercel.json` already handles the SPA rewrite and long-lived caching for assets.
 
-## Day-to-day
+# Editing text on the site itself
+
+Anything the site says can be changed by clicking on it. Open any page with
+`?edit=1` on the end of the address:
+
+```
+https://emailsbyandreea.vercel.app/about?edit=1
+```
+
+Type the password, then click any words on the page. A panel opens with that
+text, you change it, press **Salvez**, and it is live. **Original** puts the
+built-in wording back. **Ies** leaves editing mode.
+
+This reaches every string the site renders: headings, buttons, section labels,
+service descriptions, the policies, the words in the footer. Two places showing
+the same sentence are edited separately, so changing the heading on one page
+never disturbs another.
+
+## How it works
+
+`src/data` stays the source of the site's words. `src/lib/copyRegistry.js`
+walks those modules once at start-up and gives every string a stable name, such
+as `services.welcome-flows.headline`. Saved changes live in one Sanity document
+and are written over the top before React first renders, which is why an edited
+page never flashes the old wording.
+
+While editing, each string carries sixteen zero-width characters naming its
+place in that registry. That is how a click knows precisely which of two
+identical labels it landed on. Visitors never receive them: the markers, and
+the editor's code, only exist when `?edit=1` is present.
+
+Saving goes through `/api/copy`, which holds the Sanity token. The browser only
+ever sends the new wording and the password.
+
+## Setting it up
+
+In Vercel → Settings → Environment Variables:
+
+| Variable | Value |
+| --- | --- |
+| `EDIT_PASSWORD` | one you choose, 12 characters or more |
+| `SANITY_WRITE_TOKEN` | sanity.io/manage → API → Tokens → Add token, **Editor** |
+
+Redeploy after adding them. Until both are set the editor answers "not
+configured" rather than pretending to save.
+
+To try it on `localhost`, put the same two values in `.env` (git ignores it).
+
+# Day-to-day
 
 - **Write an article** — studio → Blog posts → Create. Fill the title, click
   *Generate* next to the URL, add a thumbnail with alt text, write the body,
