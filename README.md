@@ -116,7 +116,7 @@ of the two happened. Nothing ever reports success that did not occur.
 2. In Vercel → Settings → Environment Variables, add `RESEND_API_KEY`.
 3. Redeploy.
 
-Optional variables: `CONTACT_TO` (defaults to `contact@emailsbyandreea.com`) and
+Optional variables: `CONTACT_TO` (defaults to `pacurarandreea0@gmail.com`) and
 `CONTACT_FROM`.
 
 Until a domain is verified in Resend, mail goes out from their shared

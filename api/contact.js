@@ -8,7 +8,7 @@
  *
  * Configure in Vercel → Settings → Environment Variables:
  *   RESEND_API_KEY   required — from resend.com/api-keys
- *   CONTACT_TO       optional — defaults to contact@emailsbyandreea.com
+ *   CONTACT_TO       optional — defaults to pacurarandreea0@gmail.com
  *   CONTACT_FROM     optional — defaults to Resend's shared onboarding sender.
  *                    Set this to something on a domain verified in Resend
  *                    (e.g. "Emails by Andreea <site@emailsbyandreea.com>") for
@@ -18,7 +18,7 @@
  * quietly falls back to opening a prefilled mail draft, exactly as before.
  */
 
-const TO = process.env.CONTACT_TO || "contact@emailsbyandreea.com";
+const TO = process.env.CONTACT_TO || "pacurarandreea0@gmail.com";
 const FROM = process.env.CONTACT_FROM || "Emails by Andreea <onboarding@resend.dev>";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
