@@ -181,8 +181,23 @@ body:has(.mna-dark) .hdr {
 .mna__rule p + p {
   margin-top: 8px;
 }
+.mna__ruleitem {
+  padding-left: 1.4rem;
+}
+.mna__rulesh {
+  font-size: var(--fs-h3);
+  max-width: 30ch;
+}
+.mna__rulesupd {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-soft);
+}
 .mna__rulelink a {
-  color: var(--navy);
+  color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 3px;
 }

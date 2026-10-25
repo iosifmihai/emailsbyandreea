@@ -155,13 +155,16 @@ export default function MiniAudit() {
             </p>
           </Reveal>
           <div className="sec-head__body">
-            <h2 id="mna-rules-h">{page.rulesHeading}</h2>
+            <h2 id="mna-rules-h" className="mna__rulesh">{page.rulesHeading}</h2>
+            <p className="mna__rulesupd">{page.rulesUpdated}</p>
             <div className="mna__rules">
               {page.rules.map((r) => (
                 <section key={r.title} className="mna__rule">
                   <h3 className="mna__rulet">{r.title}</h3>
                   {r.paragraphs.map((p) => (
-                    <p key={p.slice(0, 32)}>{p}</p>
+                    <p key={p.slice(0, 32)} className={/^[a-f]\) /.test(p) ? "mna__ruleitem" : undefined}>
+                      {p}
+                    </p>
                   ))}
                 </section>
               ))}

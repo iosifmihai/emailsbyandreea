@@ -11,7 +11,7 @@ export const miniAudit = {
   open: true,
   formUrl:
     "https://docs.google.com/forms/d/e/1FAIpQLSeqjlXe0tYhryaOGSUuCmvZera4WVlB5GmAgk6cAY_02m8toQ/viewform",
-  showRules: false,
+  showRules: true,
   deadline: "5 noiembrie 2026",
 
   metaTitle: "Mini-audit email gratuit pre-Black Friday",
@@ -85,79 +85,181 @@ export const miniAudit = {
   ],
 
   rulesLabel: "Regulament",
-  rulesHeading: "Regulamentul campaniei",
+  rulesHeading: "Regulamentul oficial al campaniei „Mini-audit gratuit pre-Black Friday”",
+  rulesUpdated: "Versiunea în vigoare din [DATA PUBLICĂRII]",
   rules: [
     {
-      title: "1. Organizator",
+      title: "Art. 1. Organizatorul",
       paragraphs: [
-        "Campania este organizată de [DENUMIRE PFA / FIRMĂ], CUI [CUI], cu sediul în [ADRESĂ], sub brandul Emails by Andreea (emailsbyandreea.com), denumit în continuare „Organizatorul”.",
+        "1.1. Organizatorul campaniei „Mini-audit gratuit pre-Black Friday” (denumită în continuare „Campania”) este [DENUMIRE ORGANIZATOR], [FORMA JURIDICĂ], cu sediul în [ADRESA SEDIULUI], înregistrat la Registrul Comerțului sub nr. [NR. ORC], cod unic de înregistrare [CUI], adresă de email contact@emailsbyandreea.com, care își desfășoară activitatea sub denumirea comercială „Emails by Andreea” (denumit în continuare „Organizatorul”).",
+        "1.2. Campania se desfășoară în conformitate cu prevederile prezentului regulament (denumit în continuare „Regulamentul”), ale căror dispoziții sunt obligatorii pentru toți participanții.",
+        "1.3. Regulamentul este pus la dispoziția oricărei persoane interesate, în mod gratuit, pe pagina https://emailsbyandreea.com/mini-audit-black-friday, pe toată durata Campaniei.",
       ],
     },
     {
-      title: "2. Perioada",
+      title: "Art. 2. Definiții",
       paragraphs: [
-        "Înscrierile se fac până pe 5 noiembrie 2026, ora 23:59, sau până la ocuparea tuturor locurilor, dacă acestea se ocupă mai devreme. Mini-auditul se livrează în cel mult 3 zile lucrătoare de la confirmarea înscrierii și primirea accesului la cont.",
+        "În sensul prezentului Regulament, termenii de mai jos au următoarele înțelesuri:",
+        "a) „Participant”: persoana juridică, persoana fizică autorizată, întreprinderea individuală sau familială care deține ori administrează un magazin online și care se înscrie în Campanie, prin Reprezentantul său, cu respectarea condițiilor prevăzute la art. 5;",
+        "b) „Reprezentant”: persoana fizică ce completează Formularul în numele Participantului și care declară că are dreptul de a-l reprezenta;",
+        "c) „Contul”: contul Participantului deschis pe o platformă de email marketing;",
+        "d) „Formularul”: formularul online de înscriere în Campanie, pus la dispoziție de Organizator;",
+        "e) „Mini-auditul”: serviciul gratuit de analiză a Contului, descris la art. 7;",
+        "f) „Raportul”: documentul în format PDF care cuprinde rezultatele Mini-auditului.",
       ],
     },
     {
-      title: "3. Cine se poate înscrie",
+      title: "Art. 3. Natura Campaniei",
       paragraphs: [
-        "Se pot înscrie magazinele online care folosesc deja o platformă de email marketing, au cel puțin 1.000 de abonați în lista de email și pot oferi acces de vizualizare la cont sau capturi de ecran relevante. Se acceptă o singură înscriere per brand.",
+        "3.1. Campania are ca obiect prestarea gratuită, cu titlu promoțional, a Mini-auditului către Participanții eligibili. Participarea nu este condiționată de achiziționarea vreunui produs sau serviciu și nu implică tragere la sorți, acordarea de premii ori plata vreunei sume de bani.",
+        "3.2. Campania se adresează exclusiv profesioniștilor, în sensul art. 3 din Codul civil, care acționează în scopul activității lor economice. Campania nu se adresează consumatorilor.",
       ],
     },
     {
-      title: "4. Număr de locuri",
+      title: "Art. 4. Durata și modul de desfășurare",
       paragraphs: [
-        "Numărul de locuri este limitat. Înscrierile sunt analizate în ordinea primirii, iar Organizatorul confirmă prin email înscrierile acceptate.",
+        "4.1. Înscrierile în Campanie se pot efectua de la data publicării prezentului Regulament până la data de 5 noiembrie 2026, ora 23:59 (ora României) sau până la epuizarea locurilor disponibile, oricare dintre aceste evenimente intervine primul.",
+        "4.2. Înscrierile transmise după expirarea termenului prevăzut la art. 4.1 nu vor fi luate în considerare.",
+        "4.3. Campania se desfășoară exclusiv online. Mini-auditul se realizează, iar Raportul se redactează, în limba română sau, la cererea Participantului, în limba engleză.",
       ],
     },
     {
-      title: "5. Ce include mini-auditul",
+      title: "Art. 5. Condiții de eligibilitate",
       paragraphs: [
-        "O analiză a contului de email marketing, concentrată pe pregătirea pentru Black Friday, pe cinci zone: audit tehnic (autentificarea domeniului, setările de trimitere și livrabilitatea), audit automatizări, campanii, baza de date și pop-up-uri.",
-        "Participantul primește un raport PDF cu constatările pe fiecare zonă, problemele prioritare și recomandările de aplicat înainte de Black Friday.",
+        "5.1. Pot participa la Campanie Participanții care îndeplinesc cumulativ următoarele condiții:",
+        "a) operează un magazin online funcțional;",
+        "b) utilizează o platformă de email marketing activă (de exemplu theMarketer, Klaviyo, Omnisend, Mailchimp sau alta similară);",
+        "c) au cel puțin 1.000 (o mie) de abonați în lista de email;",
+        "d) pot acorda Organizatorului acces de vizualizare la Cont sau pot transmite capturi de ecran relevante;",
+        "e) au completat integral Formularul, cu informații reale, exacte și actuale;",
+        "f) au acceptat prezentul Regulament.",
+        "5.2. Se admite o singură înscriere pentru fiecare brand sau magazin online. Înscrierile multiple pentru același brand sau magazin vor fi considerate o singură înscriere.",
+        "5.3. Organizatorul poate solicita Participantului informații suplimentare, în scopul verificării îndeplinirii condițiilor de eligibilitate.",
       ],
     },
     {
-      title: "6. Ce nu include mini-auditul",
+      title: "Art. 6. Mecanismul Campaniei",
       paragraphs: [
-        "Implementarea recomandărilor; crearea sau modificarea de emailuri, automatizări, segmente sau pop-up-uri; auditul complet al contului, care este un serviciu separat, contra cost; analiza detaliată a datelor financiare sau a altor canale de marketing; consultanța continuă; vreo garanție privind rezultatele campaniilor de Black Friday.",
+        "6.1. Înscrierea se realizează exclusiv prin completarea și transmiterea Formularului, în perioada prevăzută la art. 4.1.",
+        "6.2. Numărul de locuri este limitat și se stabilește de Organizator în funcție de capacitatea sa de lucru. Înscrierile se analizează în ordinea cronologică a primirii.",
+        "6.3. Organizatorul comunică Participantului, prin email, acceptarea înscrierii, de regulă în termen de 24 de ore, dar nu mai târziu de 2 (două) zile lucrătoare de la primirea Formularului. Organizatorul poate respinge înscrierile care nu îndeplinesc condițiile prevăzute la art. 5 și va comunica respingerea prin email.",
+        "6.4. Raportul se transmite Participantului, prin email, în termen de cel mult 3 (trei) zile lucrătoare de la data la care Organizatorul a primit accesul la Cont sau capturile de ecran necesare, în mod complet.",
+        "6.5. În cazul în care Participantul nu acordă accesul la Cont și nu transmite capturile de ecran necesare în termen de 3 (trei) zile lucrătoare de la confirmarea înscrierii, Organizatorul poate considera înscrierea anulată și poate realoca locul.",
       ],
     },
     {
-      title: "7. Accesul la cont",
+      title: "Art. 7. Obiectul Mini-auditului",
       paragraphs: [
-        "Pentru audit este suficient un acces de tip vizualizare, acolo unde platforma îl permite, sau capturi de ecran. Organizatorul nu modifică nimic în cont. Participantul poate retrage accesul după primirea raportului.",
+        "7.1. Mini-auditul constă într-o analiză a Contului, orientată spre pregătirea campaniilor de Black Friday, care vizează următoarele cinci domenii:",
+        "a) audit tehnic: autentificarea domeniului de trimitere (SPF, DKIM, DMARC), setările de trimitere și indicatorii de livrabilitate disponibili;",
+        "b) audit al automatizărilor: existența, configurarea și funcționarea fluxurilor automate;",
+        "c) campanii: frecvența, subiectele, designul și conținutul campaniilor recente;",
+        "d) baza de date: igiena listei de abonați, abonații inactivi și segmentarea;",
+        "e) pop-up-uri: pop-up-urile și formularele de abonare utilizate pentru colectarea abonaților.",
+        "7.2. Raportul cuprinde constatările pentru fiecare dintre domeniile prevăzute la art. 7.1, problemele identificate ca prioritare și recomandările Organizatorului.",
+        "7.3. Mini-auditul are caracter punctual și se realizează exclusiv pe baza informațiilor accesibile Organizatorului sau furnizate de Participant la data analizei.",
       ],
     },
     {
-      title: "8. Confidențialitate",
+      title: "Art. 8. Servicii care nu sunt incluse",
       paragraphs: [
-        "Informațiile din contul participantului sunt folosite exclusiv pentru realizarea mini-auditului. Ele nu se publică și nu se transmit terților. La cerere, Organizatorul poate semna un acord de confidențialitate (NDA).",
+        "Mini-auditul nu include:",
+        "a) implementarea recomandărilor cuprinse în Raport;",
+        "b) crearea sau modificarea de emailuri, automatizări, segmente, pop-up-uri ori a oricăror alte elemente din Cont;",
+        "c) auditul complet al Contului, care constituie un serviciu distinct, contra cost;",
+        "d) analiza detaliată a datelor financiare ale Participantului sau a altor canale de marketing;",
+        "e) consultanță continuă, ședințe de lucru sau suport ulterior transmiterii Raportului.",
+        "Orice serviciu suplimentar poate fi prestat numai în baza unei oferte separate și a unui acord încheiat între Organizator și Participant.",
       ],
     },
     {
-      title: "9. Date personale",
+      title: "Art. 9. Obligațiile Participantului",
       paragraphs: [
-        "Datele trimise prin formular (nume, email, telefon, brand, site și informațiile despre contul de email) sunt prelucrate de Organizator pentru a analiza înscrierea, a realiza mini-auditul și a comunica cu participantul despre acesta. Datele se păstrează cel mult 12 luni de la finalul campaniei.",
-        "Participantul are dreptul de acces, rectificare, ștergere, restricționare și opoziție, pe care îl poate exercita scriind la contact@emailsbyandreea.com. Mai multe detalii se găsesc în Politica de confidențialitate. Abonarea la newsletterul Emails by Andreea se face doar cu acord separat, bifat explicit în formular.",
+        "Participantul se obligă:",
+        "a) să furnizeze informații reale, exacte și complete;",
+        "b) să garanteze că Reprezentantul are dreptul de a-l reprezenta și de a acorda accesul la Cont;",
+        "c) să acorde accesul la Cont prin invitarea unui utilizator cu drepturi de vizualizare, acolo unde platforma permite acest lucru, fără a transmite parole sau alte date de autentificare;",
+        "d) să retragă accesul acordat Organizatorului după primirea Raportului, dacă dorește acest lucru;",
+        "e) să răspundă pentru legalitatea colectării și a prelucrării datelor abonaților din Cont.",
       ],
     },
     {
-      title: "10. Fără obligații",
+      title: "Art. 10. Obligațiile Organizatorului",
       paragraphs: [
-        "Mini-auditul este gratuit și nu obligă participantul la achiziția vreunui serviciu. Dacă participantul dorește implementarea recomandărilor, Organizatorul îi poate trimite o ofertă separată.",
+        "Organizatorul se obligă:",
+        "a) să realizeze Mini-auditul cu diligența profesională cerută de natura serviciului;",
+        "b) să nu modifice niciun element din Cont;",
+        "c) să nu descarce, să nu exporte, să nu copieze și să nu stocheze datele abonaților Participantului;",
+        "d) să respecte obligațiile de confidențialitate prevăzute la art. 11.",
       ],
     },
     {
-      title: "11. Dreptul de a refuza sau de a modifica",
+      title: "Art. 11. Confidențialitate",
       paragraphs: [
-        "Organizatorul poate refuza înscrierile care nu îndeplinesc condițiile de la punctul 3. Organizatorul poate modifica sau încheia campania mai devreme, cu anunț pe această pagină.",
+        "11.1. Toate informațiile din Cont, precum și cele furnizate de Participant în cadrul Campaniei, sunt considerate confidențiale. Organizatorul le va utiliza exclusiv în scopul realizării Mini-auditului și nu le va divulga terților, cu excepția cazurilor în care divulgarea este impusă de lege sau de o autoritate competentă.",
+        "11.2. Nu sunt considerate confidențiale informațiile care sunt sau devin publice fără vreo culpă a Organizatorului.",
+        "11.3. La solicitarea Participantului, Organizatorul poate încheia un acord de confidențialitate separat.",
+        "11.4. Obligația de confidențialitate se menține pe o perioadă de 2 (doi) ani de la data încetării Campaniei.",
       ],
     },
     {
-      title: "12. Contact",
-      paragraphs: ["Pentru orice întrebare legată de campanie: contact@emailsbyandreea.com."],
+      title: "Art. 12. Proprietate intelectuală",
+      paragraphs: [
+        "12.1. Raportul, structura, metodologia și conținutul acestuia constituie proprietatea intelectuală a Organizatorului. Participantul dobândește un drept neexclusiv, gratuit și netransmisibil de a utiliza Raportul pentru nevoile sale interne, inclusiv de a-l transmite colaboratorilor săi în scopul implementării recomandărilor.",
+        "12.2. Fără acordul prealabil scris al Organizatorului, Participantul nu poate publica, comercializa sau pune Raportul la dispoziția publicului.",
+        "12.3. Organizatorul nu va utiliza denumirea, marca, datele sau rezultatele Participantului în materiale de prezentare ori de promovare (inclusiv studii de caz sau testimoniale) fără acordul prealabil scris al acestuia. Organizatorul poate utiliza concluzii generale, agregate și complet anonimizate, din care Participantul nu poate fi identificat.",
+      ],
+    },
+    {
+      title: "Art. 13. Limitarea răspunderii",
+      paragraphs: [
+        "13.1. Recomandările cuprinse în Raport au caracter informativ. Decizia de a le implementa, precum și modul de implementare, aparțin exclusiv Participantului.",
+        "13.2. Organizatorul nu garantează obținerea unor rezultate comerciale determinate, rezultatele campaniilor de email marketing depinzând de factori care nu se află sub controlul său.",
+        "13.3. Având în vedere caracterul gratuit al Mini-auditului, în limitele permise de art. 1355 din Codul civil, Organizatorul nu răspunde pentru prejudiciile indirecte, pierderile de profit sau de venituri ori pentru rezultatele campaniilor Participantului, decurgând din implementarea sau neimplementarea recomandărilor, cu excepția prejudiciilor cauzate cu intenție sau din culpă gravă.",
+        "13.4. Organizatorul nu răspunde pentru funcționarea platformelor terțe, pentru întârzierile cauzate de Participant sau pentru consecințele furnizării de către acesta a unor informații incomplete ori inexacte.",
+      ],
+    },
+    {
+      title: "Art. 14. Forța majoră și cazul fortuit",
+      paragraphs: [
+        "Forța majoră și cazul fortuit, astfel cum sunt definite la art. 1351 din Codul civil, exonerează de răspundere partea care le invocă, în condițiile legii. Organizatorul va informa Participanții, prin email sau pe pagina Campaniei, cu privire la imposibilitatea de a-și îndeplini obligațiile.",
+      ],
+    },
+    {
+      title: "Art. 15. Protecția datelor cu caracter personal",
+      paragraphs: [
+        "15.1. Organizatorul prelucrează datele cu caracter personal în calitate de operator, cu respectarea Regulamentului (UE) 2016/679 („GDPR”) și a Legii nr. 190/2018.",
+        "15.2. Categoriile de date prelucrate sunt: numele și prenumele, adresa de email, numărul de telefon (opțional) ale Reprezentantului, precum și informațiile furnizate prin Formular cu privire la Participant și la Cont.",
+        "15.3. Datele sunt prelucrate în următoarele scopuri și temeiuri: a) analiza înscrierii, realizarea Mini-auditului și comunicarea cu Participantul, în temeiul art. 6 alin. (1) lit. (b) și (f) din GDPR; b) transmiterea newsletterului Emails by Andreea, numai pe baza consimțământului exprimat separat, în temeiul art. 6 alin. (1) lit. (a) din GDPR, consimțământ care poate fi retras oricând; c) îndeplinirea obligațiilor legale și apărarea drepturilor Organizatorului, în temeiul art. 6 alin. (1) lit. (c) și (f) din GDPR.",
+        "15.4. Datele pot fi comunicate furnizorilor de servicii utilizați de Organizator pentru colectarea formularelor, stocare și comunicare prin email (de exemplu Google), care acționează în calitate de persoane împuternicite. În cazul transferurilor în afara Spațiului Economic European, acestea se realizează pe baza garanțiilor prevăzute de GDPR, precum Cadrul UE-SUA privind protecția datelor sau clauzele contractuale standard. Organizatorul nu vinde datele cu caracter personal.",
+        "15.5. Datele se păstrează cel mult 12 (douăsprezece) luni de la data încetării Campaniei. Datele prelucrate în baza consimțământului se păstrează până la retragerea acestuia, iar în cazul încheierii unui contract între părți, pe durata acestuia și ulterior, potrivit termenelor legale.",
+        "15.6. Persoanele vizate beneficiază de dreptul de acces, de rectificare, de ștergere, de restricționare a prelucrării, de portabilitate, de opoziție și de retragere a consimțământului, pe care le pot exercita printr-o cerere transmisă la contact@emailsbyandreea.com. Persoanele vizate au, de asemenea, dreptul de a depune o plângere la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (www.dataprotection.ro).",
+        "15.7. Cu privire la datele abonaților din Cont, Participantul are calitatea de operator. Organizatorul accesează aceste date exclusiv în modul vizualizare și strict în scopul realizării Mini-auditului, fără a le extrage, copia sau stoca.",
+        "15.8. Informații suplimentare se regăsesc în Politica de confidențialitate disponibilă pe site-ul emailsbyandreea.com.",
+      ],
+    },
+    {
+      title: "Art. 16. Modificarea și încetarea Campaniei",
+      paragraphs: [
+        "16.1. Organizatorul poate modifica prezentul Regulament prin act adițional publicat pe pagina Campaniei. Modificările intră în vigoare la data publicării și nu afectează înscrierile deja confirmate.",
+        "16.2. Campania poate înceta înainte de termenul prevăzut la art. 4.1 în caz de epuizare a locurilor disponibile, în caz de forță majoră sau prin decizia Organizatorului, comunicată pe pagina Campaniei. Înscrierile confirmate până la data încetării vor fi onorate.",
+      ],
+    },
+    {
+      title: "Art. 17. Legea aplicabilă și soluționarea litigiilor",
+      paragraphs: [
+        "17.1. Prezentul Regulament este guvernat de legea română.",
+        "17.2. Eventualele neînțelegeri dintre Organizator și Participanți se soluționează pe cale amiabilă. În cazul în care soluționarea amiabilă nu este posibilă, litigiile vor fi deduse spre soluționare instanțelor judecătorești competente de la sediul Organizatorului.",
+      ],
+    },
+    {
+      title: "Art. 18. Dispoziții finale",
+      paragraphs: [
+        "18.1. Prin transmiterea Formularului, Participantul, prin Reprezentantul său, confirmă că a citit, a înțeles și acceptă în integralitate prevederile prezentului Regulament.",
+        "18.2. În cazul în care o prevedere a Regulamentului este declarată nulă sau inaplicabilă, celelalte prevederi își păstrează valabilitatea.",
+        "18.3. Comunicările dintre Organizator și Participant se realizează prin email, la adresele indicate în Formular, respectiv la contact@emailsbyandreea.com.",
+        "18.4. Prezentul Regulament este redactat în limba română. În cazul traducerii sale în alte limbi, versiunea în limba română prevalează.",
+      ],
     },
   ],
 
