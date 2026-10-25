@@ -32,6 +32,7 @@ export const staticRoutes = [
   { path: "/blog", priority: "0.8", changefreq: "weekly" },
   { path: "/reviews", priority: "0.7", changefreq: "monthly" },
   { path: "/contact", priority: "0.8", changefreq: "yearly" },
+  { path: "/mini-audit-black-friday", priority: "0.7", changefreq: "weekly" },
   ...legalPages.map((p) => ({
     path: `/${p.slug}`,
     priority: "0.3",

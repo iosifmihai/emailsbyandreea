@@ -1,0 +1,162 @@
+/* Pre-Black Friday mini-audit campaign page. Same hairline structure as the
+   rest of the site: rules between items, no cards, no shadows. */
+
+.mna__action {
+  margin-top: clamp(24px, 3vw, 36px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.mna__note {
+  font-size: var(--fs-small);
+  color: var(--muted);
+}
+.mna__note--dark {
+  color: var(--on-dark-muted);
+}
+.mna__closed {
+  margin-top: clamp(24px, 3vw, 36px);
+  padding: 16px 20px;
+  border: 1px solid var(--rule-mid);
+  max-width: 52ch;
+}
+.on-dark .mna__closed {
+  border-color: var(--rule-invert-mid);
+}
+
+.mna__facts {
+  display: grid;
+  gap: 18px;
+}
+.mna__facts dt {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.mna__facts dd {
+  margin-top: 4px;
+  font-size: var(--fs-body);
+}
+
+.mna__num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: 0.12em;
+  color: var(--sky);
+}
+
+.mna__areas,
+.mna__steps {
+  list-style: none;
+  margin: clamp(28px, 3.4vw, 48px) 0 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+.mna__area {
+  display: grid;
+  grid-template-columns: 3.2rem minmax(0, 14rem) minmax(0, 1fr);
+  gap: var(--gutter);
+  align-items: baseline;
+  padding-block: clamp(18px, 2.2vw, 28px);
+  border-bottom: 1px solid var(--rule);
+}
+.mna__areat,
+.mna__stept {
+  font-size: var(--fs-h4);
+  letter-spacing: -0.02em;
+}
+.mna__area p,
+.mna__step p {
+  color: var(--muted);
+  max-width: var(--measure);
+}
+
+.mna__steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gutter);
+  border-top: 0;
+}
+.mna__step {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule-mid);
+}
+
+.mna__fitgrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 4vw, 64px);
+}
+.mna__fith {
+  font-size: var(--fs-h3);
+}
+.mna__list {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+.mna__list li {
+  padding: 12px 0 12px 1.6rem;
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+}
+.mna__list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--navy);
+}
+.mna__list--muted li {
+  color: var(--muted);
+}
+.mna__list--muted li::before {
+  content: "–";
+  color: var(--muted-soft);
+}
+
+.mna__rules {
+  margin-top: clamp(24px, 3vw, 40px);
+  max-width: 72ch;
+  display: grid;
+  gap: clamp(18px, 2vw, 26px);
+}
+.mna__rulet {
+  font-size: var(--fs-body);
+  font-weight: 600;
+  letter-spacing: 0;
+  margin-bottom: 6px;
+}
+.mna__rule p,
+.mna__rulelink {
+  font-size: var(--fs-small);
+  line-height: 1.65;
+  color: var(--muted);
+}
+.mna__rule p + p {
+  margin-top: 8px;
+}
+.mna__rulelink a {
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 860px) {
+  .mna__area {
+    grid-template-columns: 2.4rem minmax(0, 1fr);
+  }
+  .mna__area p {
+    grid-column: 2;
+  }
+  .mna__steps,
+  .mna__fitgrid {
+    grid-template-columns: 1fr;
+  }
+}

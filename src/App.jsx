@@ -18,6 +18,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Legal = lazy(() => import("./pages/Legal"));
+const MiniAudit = lazy(() => import("./pages/MiniAudit"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 /** Sends every navigation back to the top, unless it targets an anchor. */
@@ -53,6 +54,7 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/mini-audit-black-friday" element={<MiniAudit />} />
             {legalNav.map((p) => (
               <Route
                 key={p.to}
