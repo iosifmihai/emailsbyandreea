@@ -1,5 +1,84 @@
 /* Pre-Black Friday mini-audit campaign page. Same hairline structure as the
-   rest of the site: rules between items, no cards, no shadows. */
+   rest of the site: rules between items, no cards, no shadows.
+
+   The page is black for Black Friday. It re-points the site's tokens inside
+   its own wrapper, so the shared components (hero, labels, buttons) follow
+   without page-specific overrides of each one. */
+
+.mna-dark {
+  --paper-deep: #141414;
+  --ink: #f5f5f0;
+  --muted: rgba(245, 245, 240, 0.66);
+  --muted-soft: rgba(245, 245, 240, 0.46);
+  --rule: rgba(245, 245, 240, 0.14);
+  --rule-mid: rgba(245, 245, 240, 0.24);
+  --rule-strong: rgba(245, 245, 240, 0.42);
+  background: #0a0a0a;
+  color: var(--ink);
+}
+.mna-dark .btn {
+  --btn-bg: #f5f5f0;
+  --btn-fg: #0a0a0a;
+}
+.mna-dark .btn::before {
+  background: var(--sand);
+}
+.mna-dark .phero__crumbs a:hover {
+  color: var(--ink);
+}
+
+/* The header sits over the hero transparently on every other page; over a
+   black page its dark logo would vanish, so here it keeps a light bar. */
+body:has(.mna-dark) .hdr {
+  background: var(--paper);
+  border-bottom-color: var(--rule);
+}
+
+.mna__visual {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(48px, 7vw, 110px);
+  border-bottom: 1px solid var(--rule);
+}
+.mna__word {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: clamp(4.5rem, 17vw, 17rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(245, 245, 240, 0.16);
+  pointer-events: none;
+  user-select: none;
+}
+.mna__figure {
+  position: relative;
+  max-width: 980px;
+  margin-inline: auto;
+}
+.mna__laptop {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 34px 60px rgba(0, 0, 0, 0.7));
+}
+.mna__caption {
+  margin-top: 18px;
+  text-align: center;
+  font-size: var(--fs-small);
+  color: var(--muted);
+}
+
+.mna__closing {
+  background: #000;
+  color: var(--ink);
+  border-top: 1px solid var(--rule);
+}
 
 .mna__action {
   margin-top: clamp(24px, 3vw, 36px);
@@ -111,7 +190,7 @@
   content: "✓";
   position: absolute;
   left: 0;
-  color: var(--navy);
+  color: var(--sand);
 }
 .mna__list--muted li {
   color: var(--muted);

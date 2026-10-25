@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import LaptopFlow from "../components/campaign/LaptopFlow";
 import PageHero from "../components/layout/PageHero";
 import { Button } from "../components/ui/Button";
 import { Reveal } from "../components/ui/Reveal";
@@ -37,7 +38,7 @@ export default function MiniAudit() {
   }, []);
 
   return (
-    <>
+    <div className="mna-dark">
       <Seo title={page.metaTitle} description={page.metaDescription} path={page.path} />
 
       <PageHero
@@ -64,6 +65,18 @@ export default function MiniAudit() {
       >
         <SignupAction />
       </PageHero>
+
+      <section className="mna__visual" aria-label="Ilustrație">
+        <span className="mna__word" aria-hidden="true">
+          Black Friday
+        </span>
+        <div className="shell">
+          <Reveal as="figure" className="mna__figure">
+            <LaptopFlow className="mna__laptop" />
+            <figcaption className="mna__caption">{page.visualCaption}</figcaption>
+          </Reveal>
+        </div>
+      </section>
 
       {/* the five areas */}
       <section className="section--tight" aria-labelledby="mna-areas-h">
@@ -145,6 +158,7 @@ export default function MiniAudit() {
       </section>
 
       {/* the rules, in full, so the form can link straight to them */}
+      {page.showRules && (
       <section id="regulament" className="section--tight band-paper-deep" aria-labelledby="mna-rules-h">
         <div className="shell sec-head">
           <Reveal>
@@ -170,8 +184,9 @@ export default function MiniAudit() {
           </div>
         </div>
       </section>
+      )}
 
-      <section className="ctab ctab--navy on-dark">
+      <section className="ctab mna__closing on-dark">
         <div className="shell ctab__inner">
           <Reveal className="ctab__body">
             <h2 className="ctab__h">{page.closingHeading}</h2>
@@ -182,6 +197,6 @@ export default function MiniAudit() {
           </Reveal>
         </div>
       </section>
-    </>
+    </div>
   );
 }

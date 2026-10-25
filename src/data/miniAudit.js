@@ -9,7 +9,9 @@
 export const miniAudit = {
   path: "/mini-audit-black-friday",
   open: true,
-  formUrl: "",
+  formUrl:
+    "https://docs.google.com/forms/d/e/1FAIpQLSeqjlXe0tYhryaOGSUuCmvZera4WVlB5GmAgk6cAY_02m8toQ/viewform",
+  showRules: false,
   deadline: "5 noiembrie 2026",
 
   metaTitle: "Mini-audit email gratuit pre-Black Friday",
@@ -23,6 +25,8 @@ export const miniAudit = {
   cta: "Vreau mini-auditul",
   ctaNote: "Gratuit, fără obligații. Locurile sunt limitate.",
   closedNote: "Înscrierile pentru mini-audit s-au încheiat. Mulțumesc tuturor celor care s-au înscris!",
+
+  visualCaption: "Automatizarea de abandon coș, unul dintre flow-urile pe care le verific înainte de Black Friday.",
 
   areasLabel: "Ce analizez",
   areasHeading: "Cinci zone, verificate înainte de vârful de trafic",
