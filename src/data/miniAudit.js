@@ -26,7 +26,7 @@ export const miniAudit = {
   ctaNote: "Gratuit. Locuri limitate.",
   closedNote: "Înscrierile pentru mini-audit s-au încheiat. Mulțumesc tuturor celor care s-au înscris!",
 
-  visualCaption: "Automatizarea de abandon coș, unul dintre flow-urile pe care le verific înainte de Black Friday.",
+  visualCaption: "Rotește laptopul cu mouse-ul sau cu degetul.",
 
   areasLabel: "Ce analizez",
   areasHeading: "Cinci zone, verificate înainte de vârful de trafic",

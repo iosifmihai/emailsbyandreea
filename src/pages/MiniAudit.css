@@ -37,6 +37,7 @@ body:has(.mna-dark) .hdr {
 .mna__visual {
   position: relative;
   overflow: hidden;
+  background: #000; /* matches the poster image behind the 3D model */
   padding-block: clamp(48px, 7vw, 110px);
   border-bottom: 1px solid var(--rule);
 }
@@ -64,8 +65,14 @@ body:has(.mna-dark) .hdr {
 .mna__laptop {
   display: block;
   width: 100%;
-  height: auto;
-  filter: drop-shadow(0 34px 60px rgba(0, 0, 0, 0.7));
+  aspect-ratio: 4 / 3;
+  max-height: 78vh;
+  background: transparent;
+  --poster-color: transparent;
+  cursor: grab;
+}
+.mna__laptop:active {
+  cursor: grabbing;
 }
 .mna__caption {
   margin-top: 18px;

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import LaptopFlow from "../components/campaign/LaptopFlow";
+import LaptopModel from "../components/campaign/LaptopModel";
 import PageHero from "../components/layout/PageHero";
 import { Button } from "../components/ui/Button";
 import { Reveal } from "../components/ui/Reveal";
@@ -72,7 +72,12 @@ export default function MiniAudit() {
         </span>
         <div className="shell">
           <Reveal as="figure" className="mna__figure">
-            <LaptopFlow className="mna__laptop" />
+            <LaptopModel
+              className="mna__laptop"
+              src="/assets/campaign/laptop-black-friday.glb"
+              poster="/assets/campaign/laptop-black-friday.jpg"
+              alt="Laptop cu o automatizare de email pentru Black Friday pe ecran"
+            />
             <figcaption className="mna__caption">{page.visualCaption}</figcaption>
           </Reveal>
         </div>
