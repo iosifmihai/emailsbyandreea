@@ -4,7 +4,8 @@
  * Romanian, unlike the rest of the site: the campaign is for Romanian online
  * stores. Sign-ups go to a Google Form, so `formUrl` must be filled in before
  * the page is linked anywhere. Set `open` to false once sign-ups close and the
- * page swaps its buttons for a closed notice.
+ * page swaps its buttons for a closed notice. The rules carry placeholders
+ * in [BRACKETS] that must be filled in before the page goes live.
  */
 export const miniAudit = {
   path: "/mini-audit-black-friday",
