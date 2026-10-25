@@ -4,8 +4,7 @@
  * Romanian, unlike the rest of the site: the campaign is for Romanian online
  * stores. Sign-ups go to a Google Form, so `formUrl` must be filled in before
  * the page is linked anywhere. Set `open` to false once sign-ups close and the
- * page swaps its buttons for a closed notice. The rules carry placeholders
- * in [BRACKETS] that must be filled in before the page goes live.
+ * page swaps its buttons for a closed notice.
  */
 export const miniAudit = {
   path: "/mini-audit-black-friday",
@@ -87,12 +86,12 @@ export const miniAudit = {
 
   rulesLabel: "Regulament",
   rulesHeading: "Regulamentul oficial al campaniei „Mini-audit gratuit pre-Black Friday”",
-  rulesUpdated: "Versiunea în vigoare din [DATA PUBLICĂRII]",
+  rulesUpdated: "Versiunea în vigoare din 25 octombrie 2026",
   rules: [
     {
       title: "Art. 1. Organizatorul",
       paragraphs: [
-        "1.1. Organizatorul campaniei „Mini-audit gratuit pre-Black Friday” (denumită în continuare „Campania”) este [DENUMIRE ORGANIZATOR], [FORMA JURIDICĂ], cu sediul în [ADRESA SEDIULUI], înregistrat la Registrul Comerțului sub nr. [NR. ORC], cod unic de înregistrare [CUI], adresă de email contact@emailsbyandreea.com, care își desfășoară activitatea sub denumirea comercială „Emails by Andreea” (denumit în continuare „Organizatorul”).",
+        "1.1. Organizatorul campaniei „Mini-audit gratuit pre-Black Friday” (denumită în continuare „Campania”) este PĂCURAR ANDREEA-ALEXANDRA PERSOANĂ FIZICĂ AUTORIZATĂ, cu sediul profesional în Municipiul Sibiu, Strada Strugurilor nr. 29, județul Sibiu, înregistrată la Oficiul Registrului Comerțului de pe lângă Tribunalul Sibiu sub nr. F2026019064000, cod unic de înregistrare 54451514, adresă de email contact@emailsbyandreea.com, care își desfășoară activitatea sub denumirea comercială „Emails by Andreea” (denumit în continuare „Organizatorul”).",
         "1.2. Campania se desfășoară în conformitate cu prevederile prezentului regulament (denumit în continuare „Regulamentul”), ale căror dispoziții sunt obligatorii pentru toți participanții.",
         "1.3. Regulamentul este pus la dispoziția oricărei persoane interesate, în mod gratuit, pe pagina https://emailsbyandreea.com/mini-audit-black-friday, pe toată durata Campaniei.",
       ],
