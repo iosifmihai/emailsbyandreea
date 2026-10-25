@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import LaptopModel from "../components/campaign/LaptopModel";
 import PageHero from "../components/layout/PageHero";
 import { Button } from "../components/ui/Button";
 import { Reveal } from "../components/ui/Reveal";
@@ -66,22 +65,6 @@ export default function MiniAudit() {
         <SignupAction />
       </PageHero>
 
-      <section className="mna__visual" aria-label="Ilustrație">
-        <span className="mna__word" aria-hidden="true">
-          Black Friday
-        </span>
-        <div className="shell">
-          <Reveal as="figure" className="mna__figure">
-            <LaptopModel
-              className="mna__laptop"
-              src="/assets/campaign/laptop-black-friday.glb"
-              poster="/assets/campaign/laptop-black-friday.jpg"
-              alt="Laptop cu o automatizare de email pentru Black Friday pe ecran"
-            />
-            <figcaption className="mna__caption">{page.visualCaption}</figcaption>
-          </Reveal>
-        </div>
-      </section>
 
       {/* the five areas */}
       <section className="section--tight" aria-labelledby="mna-areas-h">

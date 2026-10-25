@@ -34,53 +34,6 @@ body:has(.mna-dark) .hdr {
   border-bottom-color: var(--rule);
 }
 
-.mna__visual {
-  position: relative;
-  overflow: hidden;
-  background: #000; /* matches the poster image behind the 3D model */
-  padding-block: clamp(48px, 7vw, 110px);
-  border-bottom: 1px solid var(--rule);
-}
-.mna__word {
-  position: absolute;
-  left: 50%;
-  top: 46%;
-  transform: translate(-50%, -50%);
-  font-family: var(--font-display);
-  font-size: clamp(4.5rem, 17vw, 17rem);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.05em;
-  white-space: nowrap;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(245, 245, 240, 0.16);
-  pointer-events: none;
-  user-select: none;
-}
-.mna__figure {
-  position: relative;
-  max-width: 980px;
-  margin-inline: auto;
-}
-.mna__laptop {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  max-height: 78vh;
-  background: transparent;
-  --poster-color: transparent;
-  cursor: grab;
-}
-.mna__laptop:active {
-  cursor: grabbing;
-}
-.mna__caption {
-  margin-top: 18px;
-  text-align: center;
-  font-size: var(--fs-small);
-  color: var(--muted);
-}
-
 .mna__closing {
   background: #000;
   color: var(--ink);

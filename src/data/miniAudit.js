@@ -26,8 +26,6 @@ export const miniAudit = {
   ctaNote: "Gratuit. Locuri limitate.",
   closedNote: "Înscrierile pentru mini-audit s-au încheiat. Mulțumesc tuturor celor care s-au înscris!",
 
-  visualCaption: "Rotește laptopul cu mouse-ul sau cu degetul.",
-
   areasLabel: "Ce analizez",
   areasHeading: "Cinci zone, verificate înainte de vârful de trafic",
   areas: [
