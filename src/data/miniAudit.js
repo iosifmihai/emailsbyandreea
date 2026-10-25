@@ -21,7 +21,7 @@ export const miniAudit = {
   eyebrow: "Mini-audit gratuit · până pe 5 noiembrie",
   heading: "Auditez contul tău de email marketing înainte de Black Friday",
   lead:
-    "Îți analizez gratuit contul de email marketing și primești un raport cu tot ce ai nevoie înainte de cele mai importante trimiteri ale anului: setări tehnice, automatizări, campanii, baza de date și pop-up-uri.",
+    "Îți analizez gratuit contul de email marketing și primești un raport cu tot ce ai nevoie înainte de cele mai importante trimiteri ale anului.",
   cta: "Vreau mini-auditul",
   ctaNote: "Gratuit. Locuri limitate.",
   closedNote: "Înscrierile pentru mini-audit s-au încheiat. Mulțumesc tuturor celor care s-au înscris!",
@@ -37,7 +37,7 @@ export const miniAudit = {
     },
     {
       title: "Audit automatizări",
-      copy: "Welcome, abandon coș, abandon checkout, post-achiziție: ce flow-uri există și dacă funcționează corect atunci când traficul crește.",
+      copy: "Ce flow-uri există și dacă funcționează corect atunci când traficul crește.",
     },
     {
       title: "Campanii",
@@ -84,7 +84,6 @@ export const miniAudit = {
     "crearea sau modificarea de emailuri, automatizări, segmente sau pop-up-uri",
     "auditul complet al contului (serviciu separat)",
     "analiza altor canale de marketing",
-    "vreo garanție privind rezultatele campaniilor",
   ],
 
   rulesLabel: "Regulament",
