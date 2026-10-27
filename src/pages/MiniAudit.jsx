@@ -4,6 +4,7 @@ import { Button } from "../components/ui/Button";
 import { Reveal } from "../components/ui/Reveal";
 import { miniAudit as page } from "../data/miniAudit";
 import { site } from "../data/site";
+import { track } from "../lib/metaPixel";
 import { Seo } from "../lib/seo";
 import "../components/ui/CtaBand.css";
 import "./MiniAudit.css";
@@ -19,7 +20,12 @@ function SignupAction({ onDark = false }) {
   }
   return (
     <div className="mna__action">
-      <Button href={signupHref}>{page.cta}</Button>
+      <Button
+        href={signupHref}
+        onClick={() => track("Lead", { content_name: "Mini-audit Black Friday" })}
+      >
+        {page.cta}
+      </Button>
       <p className={`mna__note${onDark ? " mna__note--dark" : ""}`}>{page.ctaNote}</p>
     </div>
   );

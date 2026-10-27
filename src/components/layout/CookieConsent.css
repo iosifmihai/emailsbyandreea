@@ -1,0 +1,46 @@
+.cookie {
+  position: fixed;
+  left: var(--edge);
+  right: var(--edge);
+  bottom: 16px;
+  z-index: 100;
+  max-width: 640px;
+  margin-inline: auto;
+  padding: 16px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  background: var(--navy);
+  color: var(--on-dark);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgb(0 0 0 / 0.2);
+}
+
+.cookie__text {
+  flex: 1 1 260px;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.cookie__text a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.cookie__actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* the site's ghost button is drawn for light backgrounds */
+.cookie .btn--ghost {
+  color: var(--on-dark);
+  border-color: currentColor;
+}
+
+.cookie .btn--solid {
+  background: var(--paper);
+  color: var(--navy);
+  border-color: var(--paper);
+}

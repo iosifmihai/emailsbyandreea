@@ -2,6 +2,7 @@ import { Suspense, lazy, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
+import CookieConsent from "./components/layout/CookieConsent";
 import Home from "./pages/Home";
 // Only the four paths are needed to declare routes — importing the full policy
 // text here would drag every word of it into the initial bundle.
@@ -68,6 +69,7 @@ export default function App() {
       </main>
 
       <Footer />
+      <CookieConsent />
     </>
   );
 }
