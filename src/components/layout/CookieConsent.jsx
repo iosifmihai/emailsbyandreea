@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { gaPageView, loadGoogleTag } from "../../lib/googleTag";
 import { getConsent, loadPixel, setConsent, track } from "../../lib/metaPixel";
 import "./CookieConsent.css";
 
 /**
- * Asks once for marketing cookies, starts the Meta Pixel on "Accept" and
- * reports a PageView on every route change (the SPA never reloads).
+ * Asks once for cookies, starts the Meta Pixel and the Google tag on
+ * "Accept" and reports a PageView on every route change (the SPA never
+ * reloads). Google's page views come from <Seo>; this only sends the first.
  */
 export default function CookieConsent() {
   const { pathname } = useLocation();
@@ -16,7 +18,11 @@ export default function CookieConsent() {
   useEffect(() => {
     const stored = getConsent();
     setChoice(stored);
-    if (stored === "granted") loadPixel();
+    if (stored === "granted") {
+      loadPixel();
+      loadGoogleTag();
+      gaPageView();
+    }
     setReady(true);
   }, []);
 
@@ -29,13 +35,17 @@ export default function CookieConsent() {
   const decide = (value) => {
     setConsent(value);
     setChoice(value);
+    if (value === "granted") {
+      loadGoogleTag();
+      gaPageView();
+    }
   };
 
   return (
     <div className="cookie" role="dialog" aria-label="Cookie consent">
       <p className="cookie__text">
-        We use marketing cookies (Meta Pixel) to measure our campaigns. See the{" "}
-        <Link to="/cookie-policy">Cookie Policy</Link>.
+        We use analytics and marketing cookies (Google Analytics, Meta Pixel) to measure our
+        campaigns. See the <Link to="/cookie-policy">Cookie Policy</Link>.
       </p>
       <div className="cookie__actions">
         <button type="button" className="btn btn--ghost" onClick={() => decide("denied")}>

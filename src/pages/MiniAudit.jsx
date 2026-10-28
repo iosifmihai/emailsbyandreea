@@ -4,6 +4,7 @@ import { Button } from "../components/ui/Button";
 import { Reveal } from "../components/ui/Reveal";
 import { miniAudit as page } from "../data/miniAudit";
 import { site } from "../data/site";
+import { gaEvent } from "../lib/googleTag";
 import { track } from "../lib/metaPixel";
 import { Seo } from "../lib/seo";
 import "../components/ui/CtaBand.css";
@@ -22,7 +23,10 @@ function SignupAction({ onDark = false }) {
     <div className="mna__action">
       <Button
         href={signupHref}
-        onClick={() => track("Lead", { content_name: "Mini-audit Black Friday" })}
+        onClick={() => {
+          track("Lead", { content_name: "Mini-audit Black Friday" });
+          gaEvent("generate_lead", { lead_source: "Mini-audit Black Friday" });
+        }}
       >
         {page.cta}
       </Button>

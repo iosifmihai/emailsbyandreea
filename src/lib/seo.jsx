@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { site } from "../data/site";
+import { gaPageView } from "./googleTag";
 
 const SUFFIX = site.name;
 
@@ -104,6 +105,11 @@ export function Seo({
     });
     setMeta('meta[name="twitter:image"]', { name: "twitter:image", content: imageUrl });
   }, [fullTitle, description, url, imageUrl, type, noindex]);
+
+  // Runs after the title effect above, so GA records this page's title.
+  useEffect(() => {
+    gaPageView();
+  }, [fullTitle, url]);
 
   useEffect(() => {
     if (!ld) return undefined;
