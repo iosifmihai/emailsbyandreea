@@ -39,7 +39,7 @@ export const miniAudit = {
     },
     {
       title: "Campanii",
-      copy: "Frecvența, subiectele, designul și mesajul ultimelor newslettere. Ce merită schimbat înainte de trimiterile mari.",
+      copy: "Analizez doar campaniile pe care plănuiești să le trimiți de Black Friday: frecvența, subiectele, designul și mesajul. Ce merită schimbat înainte de trimiterile mari.",
     },
     {
       title: "Baza de date",
@@ -87,7 +87,7 @@ export const miniAudit = {
 
   rulesLabel: "Regulament",
   rulesHeading: "Regulamentul oficial al campaniei „Mini-audit gratuit pre-Black Friday”",
-  rulesUpdated: "Versiunea în vigoare din 25 octombrie 2026",
+  rulesUpdated: "Versiunea în vigoare din 28 octombrie 2026",
   rules: [
     {
       title: "Art. 1. Organizatorul",
@@ -154,7 +154,7 @@ export const miniAudit = {
         "7.1. Mini-auditul constă într-o analiză a Contului, orientată spre pregătirea campaniilor de Black Friday, care vizează următoarele cinci domenii:",
         "a) audit tehnic: autentificarea domeniului de trimitere (SPF, DKIM, DMARC), setările de trimitere și indicatorii de livrabilitate disponibili;",
         "b) audit al automatizărilor: existența, configurarea și funcționarea fluxurilor automate;",
-        "c) campanii: frecvența, subiectele, designul și conținutul campaniilor recente;",
+        "c) campanii: frecvența, subiectele, designul și conținutul campaniilor pe care Participantul le planifică pentru Black Friday; campaniile care nu au legătură cu Black Friday nu fac obiectul analizei;",
         "d) baza de date: igiena listei de abonați, abonații inactivi și segmentarea;",
         "e) pop-up-uri: pop-up-urile și formularele de abonare utilizate pentru colectarea abonaților.",
         "7.2. Raportul cuprinde constatările pentru fiecare dintre domeniile prevăzute la art. 7.1, problemele identificate ca prioritare și recomandările Organizatorului.",
